@@ -15,9 +15,9 @@
 @import "../bootstrap/mixins";
 
 // Bootsrap
-@import "../../node_modules/bootstrap/scss/functions";
-@import "../../node_modules/bootstrap/scss/variables";
-@import "../../node_modules/bootstrap/scss/mixins";
+@import "./node_modules/bootstrap/scss/functions";
+@import "./node_modules/bootstrap/scss/variables";
+@import "./node_modules/bootstrap/scss/mixins";
 
 // Local variable
 $mail-sidebar-width:      $width-sidebar - 20px;
