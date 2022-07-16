@@ -17,3 +17,11 @@ yarn-error.log
 !public/css/.gitkeep
 /public/lib/*
 !public/lib/.gitkeep
+/public/data/*
+!public/data/.gitkeep
+/public/fonts/*
+!public/fonts/.gitkeep
+/public/img/*
+!public/img/.gitkeep
+/public/js/*
+!public/js/.gitkeep

@@ -30,6 +30,26 @@ function compilePageStyle() {
         .pipe(dest('./public/css'));
 }
 
+function copyDummyDataJson() {
+    return src('./resources/data/**/*.*')
+        .pipe(dest('./public/data'));
+}
+
+function copyFonts() {
+    return src('./resources/fonts/**/*.*')
+        .pipe(dest('./public/fonts'));
+}
+
+function copyImage() {
+    return src('./resources/img/**/*.*')
+        .pipe(dest('./public/img'));
+}
+
+function compileJavaScript() {
+    return src('./resources/js/**/*.*')
+        .pipe(dest('./public/js'));
+}
+
 function npmDep() {
     return src(npmDist(), {base: './node_modules/'})
         .pipe(rename(function (path) {
@@ -39,4 +59,17 @@ function npmDep() {
 }
 
 
-exports.default = parallel(series(compileStyle, compileSkinStyle, compilePageStyle), npmDep);
+exports.default = parallel(
+    series(
+        compileStyle,
+        compileSkinStyle,
+        compilePageStyle
+    ),
+    series(
+        copyDummyDataJson,
+        copyFonts,
+        copyImage,
+        compileJavaScript
+    ),
+    npmDep
+);
