@@ -1,0 +1,178 @@
+
+.chat-navleft {
+  background-color: darken($gray-900, 3%);
+
+  .nav-link:not(.active) {
+    color: $gray-500;
+    @include hover-focus() { color: #fff; }
+  }
+}
+
+.chat-sidebar {
+  background-color: darken($gray-900, 5%);
+}
+
+.chat-sidebar-header {
+  background-color: darken($gray-900, 3%);
+
+  .dropdown-link {
+    > span { color: $gray-800; }
+    @include hover-focus() {
+      > span { color: $gray-300; }
+    }
+  }
+
+  .dropdown-menu {
+    background-color: darken($gray-900, 2%);
+
+    &::before { border-bottom-color: rgba(#fff, .08); }
+    &::after { border-bottom-color: darken($gray-900, 2%); }
+  }
+
+  .dropdown-item {
+    color: $gray-500;
+    @include hover-focus() {
+      color: #fff;
+      background-color: lighten($gray-900, 2%);
+    }
+  }
+}
+
+.nav-chat {
+  .nav-link {
+    color: $gray-500;
+
+    @include hover-focus() {
+      background-color: $gray-900;
+      color: #fff;
+    }
+
+    &.active {
+      background-color: lighten($gray-900, 2%);
+      color: $color-brand-01;
+    }
+  }
+}
+
+.chat-msg-list {
+  .media {
+    @include hover-focus() {
+      background-color: $gray-900;
+      .avatar::after { box-shadow: 0 0 0 2px $gray-900; }
+    }
+
+    &.active {
+      background-color: $gray-900;
+      .avatar::after { box-shadow: 0 0 0 2px $gray-900; }
+    }
+  }
+
+  .avatar::after { box-shadow: 0 0 0 2px $gray-900; }
+}
+
+.chat-sidebar-footer {
+  background-color: darken($gray-900, 3%);
+
+  .avatar::after { box-shadow: 0 0 0 2px $gray-900; }
+
+  a {
+    color: $gray-500;
+    @include hover-focus() { color: #fff; }
+  }
+}
+
+.chat-content {
+  background-color: darken($gray-900, 5%);
+}
+
+.chat-content-header {
+  background-color: darken($gray-900, 3%);
+
+  .avatar::after { box-shadow: 0 0 0 2px $gray-900; }
+
+  nav a {
+    color: $gray-500;
+    @include hover-focus() { color: #fff; }
+
+    &.active {
+      color: $color-brand-01;
+    }
+  }
+
+  .search-form {
+    .form-control,
+    .btn { border-color: rgba(#fff, .08); }
+
+    .form-control:focus {
+      &,
+      + .btn { border-color: $gray-800; }
+    }
+
+    .btn {
+      @include hover-focus() { color: #fff; }
+    }
+  }
+}
+
+.chat-content-body {
+  color: $gray-500;
+
+  .avatar::after { box-shadow: 0 0 0 2px $gray-900; }
+}
+
+.chat-group {
+  .media-body {
+    h6 small { color: $gray-700; }
+  }
+}
+
+.chat-group-divider {
+  &::before,
+  &::after { background-color: rgba(#fff, .06); }
+}
+
+.chat-content-footer {
+  background-color: darken($gray-900, 3%);
+
+  .chat-plus {
+    color: $gray-500;
+    @include hover-focus() { color: #fff; }
+  }
+
+  .form-control {
+    color: $gray-300;
+
+    &::placeholder { color: $gray-800; }
+  }
+
+  nav a {
+    color: $gray-500;
+    @include hover-focus() { color: #fff; }
+  }
+}
+
+.chat-sidebar-right {
+  background-color: darken($gray-900, 3%);
+
+  .avatar::after { box-shadow: 0 0 0 2px $gray-900; }
+}
+
+.chat-member-list .media {
+  @include hover-focus() {
+    background-color: lighten($gray-900, 5%);
+  }
+}
+
+.app-chat .modal-body {
+  h6 { color: $gray-300; }
+
+  .form-control {
+    background-color: transparent;
+    color: $gray-300;
+    border-color: $gray-700;
+  }
+
+  .btn-outline-light {
+    border-color: $gray-700;
+  }
+}

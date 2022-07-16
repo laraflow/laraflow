@@ -1,0 +1,147 @@
+
+.calendar-sidebar {
+  background-color: darken($gray-900, 5%);
+}
+
+.ui-datepicker {
+  background-color: transparent;
+
+  .ui-datepicker-title { color: #fff; }
+  .ui-datepicker-calendar td {
+    background-color: transparent;
+    border-width: 0;
+
+    &.ui-datepicker-other-month .ui-state-default { color: $gray-800; }
+  }
+}
+
+.calendar-inline .ui-datepicker {
+  .ui-datepicker-calendar td a {
+    color: $gray-600;
+    @include hover-focus() {
+      background-color: lighten($gray-900, 5%);
+      color: #fff;
+    }
+  }
+}
+
+.calendar-nav a {
+  color: $gray-500;
+  @include hover-focus() {
+    background-color: lighten($gray-900, 5%);
+    color: #fff;
+  }
+}
+
+.calendar-content {
+  background-color: transparent;
+}
+
+.calendar-content-body {
+
+
+  .fc-toolbar button {
+    border-width: 0;
+    background-color: $gray-800;
+    color: $gray-500;
+
+    @include hover-focus() {
+      background-color: $gray-700;
+      color: #fff;
+    }
+
+    &.fc-state-active {
+      background-color: $gray-700;
+      color: #fff;
+    }
+
+    &.fc-today-button {
+      background-color: $gray-800;
+      color: $gray-500;
+
+      @include hover-focus() {
+        background-color: $gray-700;
+        color: #fff;
+      }
+
+      &.fc-state-disabled {
+        background-color: $gray-900;
+        color: $gray-700;
+      }
+    }
+  }
+
+  .fc-agendaWeek-view {
+    .fc-head-container th { border-color: lighten($gray-900, 2%); }
+  }
+
+  .fc-divider {
+    background-color: darken($gray-900, 2%);
+    border-color: lighten($gray-900, 2%);
+  }
+
+  .fc-head-container .fc-day-header { color: $gray-500; }
+  .fc-other-month { background-color: darken($gray-900, 7%); }
+  td.fc-today { background-color: darken($gray-900, 2%); }
+
+
+  .fc-listMonth-view,
+  .fc-listWeek-view {
+    .fc-list-heading-main {
+      color: $gray-500;
+      @include hover-focus() { color: $gray-500; }
+
+      span:last-child { color: #fff; }
+    }
+
+    .fc-list-item { background-color: $gray-900; }
+    .fc-list-item-title a {
+      color: #fff;
+    }
+  }
+}
+
+.calendar-modal-create {
+  .modal-body {
+    color: $gray-500;
+    h5 { color: #fff; }
+  }
+
+  .form-control {
+    color: $gray-500;
+    border-color: $gray-700;
+
+    &:focus {
+      box-shadow: none;
+      border-color: $gray-600;
+    }
+  }
+
+  select {
+    background-color: transparent;
+    border-color: $gray-700;
+  }
+
+  .custom-control-label {
+    &::before {
+      border-color: $gray-700;
+      background-color: transparent;
+      margin-top: 1px;
+    }
+
+    &::after {
+      margin-top: 1px; }
+  }
+}
+
+.calendar-modal-event {
+  .modal-body { background-color: $gray-900; }
+
+  .event-start-date,
+  .event-end-date { color: $gray-300; }
+}
+
+.close {
+  color: $gray-500;
+  @include hover-focus() { color: $gray-300; }
+}

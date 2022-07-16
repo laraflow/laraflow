@@ -1,0 +1,105 @@
+
+.app-mail {
+  .backdrop { visibility: hidden; }
+}
+
+.mail-sidebar {
+  background-color: darken($gray-900, 5%);
+}
+
+.mail-sidebar-body {
+  .nav-sidebar {
+    .nav-link {
+      color: $gray-500;
+
+      @include hover-focus() {
+        background-color: $gray-900;
+        color: #fff;
+      }
+
+      &.active {
+        background-color: lighten($gray-900, 2%);
+      }
+    }
+  }
+}
+
+.mail-group {
+  background-color: darken($gray-900, 5%);
+}
+
+.mail-group-header {
+  background-color: darken($gray-900, 3%);
+}
+
+.mail-group-label {
+  background-color: darken($gray-900, 7%);
+}
+
+.mail-group-body {
+  .media {
+    background-color: transparent;
+
+    @include hover-focus() {
+      background-color: darken($gray-900, 2%);
+    }
+
+    + .media { border-top-color: $gray-900; }
+
+    &.unread {
+      background-color: $gray-900;
+      @include hover-focus() { background-color: $gray-900; }
+    }
+
+    &.selected {
+      background-color: lighten($gray-900, 5%);
+      @include hover-focus() { background-color: lighten($gray-900, 5%); }
+    }
+  }
+}
+
+.mail-content {
+  background-color: darken($gray-900, 5%);
+}
+
+.mail-content-header {
+  background-color: darken($gray-900, 3%);
+}
+
+.mail-content-body {
+  background-color: transparent;
+  color: $gray-500;
+
+  .ql-editor { color: $gray-500; }
+  .ql-snow.ql-toolbar button {
+    .ql-stroke { stroke: $gray-700; }
+
+    @include hover-focus() {
+      background-color: $gray-900;
+      .ql-stroke { stroke: #fff; }
+    }
+  }
+}
+
+.mail-compose-body {
+  border-width: 0;
+  background-color: darken($gray-900, 3%);
+  box-shadow: none;
+  color: $gray-500;
+
+  .form-control {
+    background-color: transparent;
+
+    &::placeholder { color: $gray-700; }
+  }
+
+  .ql-editor { color: $gray-500; }
+  .ql-snow.ql-toolbar button {
+    .ql-stroke { stroke: $gray-700; }
+
+    @include hover-focus() {
+      background-color: $gray-900;
+      .ql-stroke { stroke: #fff; }
+    }
+  }
+}

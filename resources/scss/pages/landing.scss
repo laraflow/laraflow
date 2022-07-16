@@ -1,0 +1,315 @@
+/*
+ * Dashforge Landing Page
+ *
+ * This style is use in landing page.
+ *
+ */
+
+// Variables
+@import "../variables";
+@import "../bootstrap/variables";
+
+// Mixins
+@import "../mixins";
+@import "../bootstrap/mixins";
+
+// Bootsrap
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+
+// Landing
+.home-slider {
+  width: 100%;
+  height: calc(100vh - #{$height-header});
+  position: relative;
+  padding: 20px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+
+  @include media-breakpoint-up(sm) {
+    padding: 60px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    align-items: center;
+    justify-content: space-between;
+    margin-top: $height-header;
+    padding: 80px 60px;
+  }
+}
+
+.home-lead {
+  position: relative;
+  z-index: 10;
+
+  @include media-breakpoint-up(md) {
+    max-width: 340px;
+    flex-shrink: 0;
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: 420px;
+  }
+}
+
+.home-text {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 10px;
+  color: $color-text-02;
+  letter-spacing: .5px;
+  margin-bottom: 30px;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+}
+
+.home-headline {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 40px;
+  line-height: 1.3;
+  color: darken($color-text-03, 25%);
+
+  @include media-breakpoint-up(sm) {
+    font-size: 24px;
+  }
+
+  span {
+    font-weight: 600;
+    color: $color-text-01;
+  }
+}
+
+.home-slider-img {
+  position: relative;
+  z-index: 200;
+  display: none;
+
+  @include media-breakpoint-up(md) {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  @include media-breakpoint-up(xl) {
+    transform: translateX(-6%);
+  }
+
+  @media (min-width: 1360px) {
+    transform: translateX(0);
+  }
+
+  > div {
+    width: 360px;
+    padding: 15px;
+    @include border-radius(10px);
+    box-shadow: 0 0 65px rgba(darken($color-brand-02, 5%), .25);
+    background-color: #fff;
+    @include border-radius(10px);
+    overflow: hidden;
+
+    &:first-child {
+      position: relative;
+      z-index: 5;
+      transform: translateX(40%);
+
+      @include media-breakpoint-up(lg) {
+        transform: translateX(50%);
+      }
+
+      @include media-breakpoint-up(xl) {
+        transform: translateX(80%);
+      }
+    }
+
+    &:nth-child(2) {
+      display: none;
+      @include media-breakpoint-up(xl) { display: block; }
+    }
+
+    &:last-child {
+      transform: translateX(-180%);
+      display: none;
+
+      @include media-breakpoint-up(lg) {
+        display: block;
+        transform: translateX(-75%);
+      }
+
+      @include media-breakpoint-up(xl) {
+        transform: translateX(-140%);
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+    border: 1px solid $color-ui-02;
+  }
+}
+
+.home-slider-bg-one {
+  position: absolute;
+  top: -10%;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  background-color: darken($color-brand-01, 5%);
+  background-image: url('../img/home-bg.png');
+  background-size: cover;
+  @include border-radius(20px);
+  transform: rotate(30deg);
+
+  @include media-breakpoint-up(md) {
+    top: -40%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    top: -45%;
+    right: 0;
+  }
+
+  @include media-breakpoint-up(xl) {
+    top: -70%;
+    right: -10%;
+    width: 800px;
+    height: 800px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 250px;
+    background-color: $color-brand-02;
+    bottom: 0;
+    left: -410px;
+    @include border-radius(10px);
+
+    @include media-breakpoint-up(lg) {
+      right: -420px;
+      @include border-radius(20px);
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 100%;
+    background-color: rgba($blue, .6);
+    bottom: 0;
+    right: -410px;
+    @include border-radius(10px);
+
+    @include media-breakpoint-up(lg) {
+      right: -420px;
+      @include border-radius(20px);
+    }
+  }
+}
+
+
+
+// Documentation
+
+.docs-logo {
+  font-weight: 700;
+  margin-bottom: 3px;
+  letter-spacing: -1px;
+
+  span {
+    font-weight: 400;
+    opacity: .7;
+  }
+}
+
+.docs-slogan {
+  margin-bottom: 25px;
+  font-size: 11px;
+  opacity: .6;
+}
+
+.nav-docs {
+  flex-direction: column;
+  line-height: 1.7;
+
+  .nav-label {
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    color: $color-text-01;
+  }
+
+  .nav-link {
+    padding: 0;
+    padding-left: 10px;
+    border-left: 1px solid $border-color;
+    font-size: 13px;
+
+    &.active {
+      color: $body-color;
+      font-weight: 500;
+      letter-spacing: -.15px;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 3px;
+        bottom: 3px;
+        left: -2px;
+        border-left: 3px solid $body-color;
+      }
+    }
+  }
+}
+
+.file-structure {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-family: 'Roboto Mono', cursive;
+  font-size: 13px;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 25px;
+
+    li {
+      display: block;
+      position: relative;
+
+      &::before {
+        content: '|--';
+        display: inline-block;
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+.table-docs {
+  th {
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+  }
+
+  td {
+    font-size: 12px;
+    font-family: 'Roboto Mono', cursive;
+  }
+}

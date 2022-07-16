@@ -1,0 +1,30 @@
+
+// template and bootstrap override variables
+@import "../variables";
+@import "../bootstrap/variables";
+
+// template and bootstrap mixins
+@import "../mixins";
+@import "../bootstrap/mixins";
+
+// bootstrap
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+// skin styles
+@import "dark/panels";
+@import "dark/components";
+@import "dark/util";
+
+// pages
+@import "dark/dashboard";
+@import "dark/calendar";
+@import "dark/chat";
+@import "dark/contacts";
+@import "dark/filemgr";
+@import "dark/mail";
+@import "dark/pages";
+
+// settings
+@import "dark/settings";

@@ -1,0 +1,16 @@
+
+// border
+.bd,
+.bd-t,
+.bd-r {
+  border-color: lighten($gray-900, 5%); //rgba(#fff, .1);
+}
+
+// border reset
+.bd-info { border-color: $cyan; }
+.bd-primary { border-color: $blue; }
+.bd-success { border-color: $green; }
+.bd-warning { border-color: $yellow; }
+.bd-pink { border-color: $pink; }
+.bd-teal { border-color: $teal; }
+.bd-purple { border-color: $purple; }

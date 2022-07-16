@@ -1,0 +1,73 @@
+
+.contact-navleft {
+  background-color: darken($gray-900, 3%);
+
+  .nav-link {
+    color: rgba(#fff, .5);
+    @include hover-focus() { color: #fff; }
+  }
+}
+
+.contact-sidebar {
+  background-color: darken($gray-900, 5%);
+}
+
+.contact-sidebar-header {
+  background-color: darken($gray-900, 3%);
+}
+
+.contact-list {
+  .media {
+    .avatar::after { box-shadow: 0 0 0 2px darken($gray-900, 5%); }
+
+    @include hover-focus() {
+      background-color: $gray-900;
+      color: #fff;
+
+      .avatar::after { box-shadow: 0 0 0 2px $gray-900; }
+    }
+
+    &.active {
+      background-color: lighten($gray-900, 2%);
+      .avatar::after { box-shadow: 0 0 0 2px lighten($gray-900, 2%); }
+    }
+  }
+}
+
+.contact-list-divider {
+  &::before,
+  &::after {
+    background-color: lighten($gray-900, 3%);
+  }
+}
+
+.contact-content {
+  background-color: darken($gray-900, 5%);
+}
+
+.contact-content-header {
+  background-color: darken($gray-900, 3%);
+}
+
+.contact-content-body {
+  color: rgba(#fff, .8);
+
+  .nav-social {
+    .nav-link {
+      color: $gray-300;
+      @include hover-focus() { color: $link-color; }
+    }
+  }
+}
+
+.contact-content-sidebar {
+  background-color: darken($gray-900, 3%);
+  color: $gray-300;
+}
+
+.contact-content-nav {
+  .nav-link {
+    color: #fff;
+    @include hover-focus() { color: $link-color; }
+  }
+}

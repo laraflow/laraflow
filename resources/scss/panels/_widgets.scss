@@ -1,0 +1,245 @@
+
+.card-widget {
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 10px;
+    padding-left: 15px;
+
+    .nav a {
+      color: $color-text-03;
+      @include hover-focus() { color: $color-text-02; }
+
+      + a { margin-left: 5px; }
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .card-title {
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .card-body { padding: 15px; }
+
+  .card-footer {
+    padding: 12px 15px;
+    font-size: 12px;
+  }
+}
+
+.card-contacts {
+  .card-body { padding: 0; }
+
+  .list-group-item {
+    padding: 15px;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+
+    @include hover-focus() {
+      background-color: $color-ui-01;
+    }
+  }
+
+  .list-body {
+    margin-left: 15px;
+
+    h6 {
+      margin-bottom: 2px;
+      font-size: 13px
+    }
+
+    p {
+      font-size: 11px;
+      font-family: $font-family-lato;
+      margin-bottom: 0;
+      color: $color-text-03;
+    }
+  }
+
+  .avatar {
+    width: 36px;
+    height: 36px;
+
+    &::after {
+      width: 6px;
+      height: 6px;
+    }
+  }
+
+  .nav {
+    margin-left: auto;
+    align-items: center;
+
+    svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    a {
+      color: $color-text-03;
+      @include hover-focus() { color: $color-brand-01; }
+
+      + a { margin-left: 5px; }
+    }
+  }
+}
+
+.card-events {
+  .media + .media { margin-top: 10px; }
+
+  .media-left {
+    min-width: 30px;
+    text-align: center;
+
+    label {
+      text-transform: uppercase;
+      font-size: 10px;
+      font-weight: 600;
+      margin-bottom: 0;
+      letter-spacing: 1px;
+      color: $color-text-03;
+    }
+
+    p {
+      margin-bottom: 0;
+      font-family: $font-family-rubik;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+  }
+
+  .media-body {
+    margin-left: 15px;
+    padding: 13px 15px;
+    border-left: 3px solid transparent;
+
+    &.event-panel-green {
+      background-color: rgba($green, .1);
+      border-left-color: $green;
+      color: darken($green, 20%);
+    }
+
+    &.event-panel-pink {
+      background-color: rgba($pink, .1);
+      border-left-color: $pink;
+      color: darken($pink, 20%);
+    }
+
+    &.event-panel-primary {
+      background-color: rgba($blue, .1);
+      border-left-color: $blue;
+      color: darken($blue, 20%);
+    }
+
+    &.event-panel-orange {
+      background-color: rgba($orange, .1);
+      border-left-color: $orange;
+      color: darken($orange, 20%);
+    }
+  }
+
+  .event-time {
+    display: block;
+    font-size: 11px;
+    margin-bottom: 5px;
+    opacity: .6;
+  }
+
+  .event-title {
+    margin-bottom: 0;
+    font-size: 13px;
+  }
+
+  .event-desc {
+    margin-top: 2px;
+    margin-bottom: 0;
+    font-size: 11px;
+    opacity: .7;
+  }
+}
+
+.card-todo {
+  .list-group-item {
+    padding: 10px 15px 15px;
+  }
+
+  .list-group-header {
+    display: flex;
+    align-items: center;
+
+    span {
+      width: 20px;
+      height: 3px;
+
+      + span { margin-left: 3px; }
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .todo-title {
+    margin-bottom: 3px;
+    font-size: 13px;
+  }
+
+  .todo-date {
+    font-size: 12px;
+    margin-bottom: 0;
+    color: $color-text-03;
+  }
+
+  .card-progress {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+  }
+
+  .content-label {
+    text-transform: uppercase;
+    font-size: 10px;
+    color: $color-text-03;
+  }
+
+  .progress {
+    flex: 1;
+    height: 5px;
+    margin: 0 10px;
+  }
+
+  .badge {
+    padding-top: 4px;
+    text-transform: uppercase;
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    @include border-radius(1.5px);
+  }
+
+  .card-footer a {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .5px;
+    border: 1px dashed $gray-400;
+    color: $color-text-02;
+
+    @include hover-focus() {
+      border-color: $blue;
+      color: $blue;
+      background-color: rgba($blue, .1);
+    }
+  }
+}

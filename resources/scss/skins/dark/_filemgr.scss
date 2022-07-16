@@ -1,0 +1,74 @@
+
+.filemgr-sidebar {
+  background-color: darken($gray-900, 5%);
+}
+
+.filemgr-sidebar-header {
+  background-color: darken($gray-900, 3%);
+
+  .dropdown-menu {
+    border-width: 0;
+    background-color: lighten($gray-900, 8%);
+  }
+
+  .dropdown-item {
+    color: $gray-300;
+
+    @include hover-focus() {
+      background-color: lighten($gray-900, 3%);
+      color: #fff;
+    }
+  }
+}
+
+.filemgr-sidebar-body {
+  color: $gray-500;
+
+  .nav-sidebar {
+    .nav-link {
+      color: $gray-500;
+
+      @include hover-focus() {
+        background-color: $gray-900;
+        color: #fff;
+      }
+
+      &.active {
+        background-color: lighten($gray-900, 2%);
+      }
+    }
+  }
+}
+
+.filemgr-content-body {
+  background-color: darken($gray-900, 5%);
+}
+
+.dropdown-file {
+  .dropdown-link {
+    @include hover-focus() { color: $gray-300; }
+  }
+
+  .dropdown-menu {
+    border-width: 0;
+    background-color: lighten($gray-900, 8%);
+  }
+
+  .dropdown-item {
+    color: $gray-300;
+
+    @include hover-focus() {
+      background-color: lighten($gray-900, 3%);
+      color: #fff;
+    }
+  }
+}
+
+.card-file-thumb {
+  background-color: darken($gray-900, 2%);
+}
+
+.media-folder {
+  border-width: 0;
+  background-color: $gray-900;
+}

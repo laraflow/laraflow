@@ -1,0 +1,16 @@
+
+.page-profile {
+  .avatar::after {
+    box-shadow: 0 0 0 1.5px darken($gray-900, 5%);
+  }
+}
+
+.list-inline-skills .list-inline-item a {
+  background-color: $gray-900;
+  border-color: lighten($gray-900, 3%);
+  color: $gray-500;
+}
+
+.profile-info-list a {
+  color: $gray-500;
+}
