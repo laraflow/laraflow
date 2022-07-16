@@ -1,0 +1,13 @@
+{
+    "name": "Design",
+    "alias": "design",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Design\\Providers\\DesignServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

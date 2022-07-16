@@ -1,0 +1,9 @@
+{
+    "Planning": true,
+    "Analysis": true,
+    "Design": true,
+    "Development": true,
+    "Testing": true,
+    "Integration": true,
+    "Maintenance": true
+}

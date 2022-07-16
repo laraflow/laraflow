@@ -1,0 +1,13 @@
+{
+    "name": "Integration",
+    "alias": "integration",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Integration\\Providers\\IntegrationServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
