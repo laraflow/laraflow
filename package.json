@@ -9,11 +9,14 @@
     "bs-html-injector": "^3.0.3",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.2.0",
+    "gulp-cli": "^2.3.0",
     "gulp-npm-dist": "^1.0.3",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.1.1",
+    "@mdi/font": "^6.9.96",
     "animate.css": "^3.7.2",
     "bootstrap": "^4.4.1",
     "bootstrap-tagsinput": "^0.7.1",
@@ -31,7 +34,6 @@
     "fullcalendar": "^3.10.1",
     "g": "^2.0.1",
     "gmaps": "^0.4.24",
-    "gulp-cli": "^2.3.0",
     "handlebars": "^4.7.3",
     "inter-ui": "^3.9.0",
     "ion-rangeslider": "^2.3.0",
