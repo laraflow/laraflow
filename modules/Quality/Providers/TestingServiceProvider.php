@@ -10,7 +10,7 @@ class TestingServiceProvider extends ServiceProvider
     /**
      * @var string $moduleName
      */
-    protected $moduleName = 'Testing';
+    protected $moduleName = 'Quality';
 
     /**
      * @var string $moduleNameLower
