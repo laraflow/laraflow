@@ -923,9 +923,10 @@
 </template>
 
 <script setup>
-    import { onMounted, ref } from 'vue';
-    import { useStore } from 'vuex';
-    const store = useStore();
+import {onMounted, ref} from 'vue';
+import {useStore} from 'vuex';
+
+const store = useStore();
 
     const menu_collapse = ref('dashboard');
 

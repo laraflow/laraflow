@@ -207,11 +207,12 @@
 </template>
 
 <script setup>
-    import { onMounted, ref } from "vue";
-    import "../../../assets/sass/apps/invoice-list.scss";
+import {onMounted, ref} from "vue";
+import "../../../assets/sass/apps/invoice-list.scss";
 
-    import { useMeta } from "../../../composables/use-meta";
-    useMeta({ title: "Invoice List" });
+import {useMeta} from "../../../composables/use-meta";
+
+useMeta({ title: "Invoice List" });
 
     const items = ref([]);
     const columns = ref(["id", "invoice", "name", "email", "date", "amount", "status", "actions"]);

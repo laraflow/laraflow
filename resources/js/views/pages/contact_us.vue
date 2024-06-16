@@ -159,14 +159,14 @@
 </template>
 
 <script setup>
-    import { ref } from "vue";
-    import "../../assets/sass/pages/contact_us.scss";
-    import highlight from "../../components/plugins/highlight.vue";
+import {ref} from "vue";
+import "../../assets/sass/pages/contact_us.scss";
 
-    import { GoogleMap, Marker } from "vue3-google-map";
+import {GoogleMap, Marker} from "vue3-google-map";
 
-    import { useMeta } from "../../composables/use-meta";
-    useMeta({ title: "Contact Form" });
+import {useMeta} from "../../composables/use-meta";
+
+useMeta({ title: "Contact Form" });
 
     const rdo_demo = ref("phone");
     const myLatLng = { lat: 48.864716, lng: 2.349014 };

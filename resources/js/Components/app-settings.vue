@@ -133,10 +133,11 @@
 </template>
 
 <script setup>
-    import { onMounted, ref } from "vue";
+import {onMounted, ref} from "vue";
 
-    import { useStore } from "vuex";
-    const store = useStore();
+import {useStore} from "vuex";
+
+const store = useStore();
 
     const isOpen = ref(null);
     onMounted(() => {

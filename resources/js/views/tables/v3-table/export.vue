@@ -82,14 +82,15 @@
 </template>
 
 <script setup>
-    import { onMounted, ref } from "vue";
+import {onMounted, ref} from "vue";
 
-    //pdf export
-    import jsPDF from "jspdf";
-    import "jspdf-autotable";
+//pdf export
+import jsPDF from "jspdf";
+import "jspdf-autotable";
 
-    import { useMeta } from "../../../composables/use-meta";
-    useMeta({ title: "Export Table" });
+import {useMeta} from "../../../composables/use-meta";
+
+useMeta({ title: "Export Table" });
 
     const columns = ref(["profile", "name", "position", "office", "age", "start_date", "salary", "action"]);
     const items = ref([]);

@@ -4,7 +4,12 @@ defineProps({
         type: String,
         'default': 'Button'
     }
-})
+});
+
+defineOptions({
+    inheritAttrs: false
+});
+
 </script>
 
 <template>

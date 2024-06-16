@@ -204,22 +204,23 @@
 </template>
 
 <script setup>
-    import { onMounted, ref, reactive } from 'vue';
-    import '../../assets/sass/apps/calendar.scss';
+import {onMounted, reactive, ref} from 'vue';
+import '../../assets/sass/apps/calendar.scss';
 
-    import '@fullcalendar/core/vdom';
-    import FullCalendar from '@fullcalendar/vue3';
-    import dayGridPlugin from '@fullcalendar/daygrid';
-    import timeGridPlugin from '@fullcalendar/timegrid';
-    import interactionPlugin, { Draggable } from '@fullcalendar/interaction';
+import '@fullcalendar/core/vdom';
+import FullCalendar from '@fullcalendar/vue3';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import timeGridPlugin from '@fullcalendar/timegrid';
+import interactionPlugin, {Draggable} from '@fullcalendar/interaction';
 
-    //flatpickr
-    import flatPickr from 'vue-flatpickr-component';
-    import 'flatpickr/dist/flatpickr.css';
-    import '../../assets/sass/forms/custom-flatpickr.css';
+//flatpickr
+import flatPickr from 'vue-flatpickr-component';
+import 'flatpickr/dist/flatpickr.css';
+import '../../assets/sass/forms/custom-flatpickr.css';
 
-    import { useMeta } from '../../composables/use-meta';
-    useMeta({ title: 'Fullcalendar Drag and Drop Event' });
+import {useMeta} from '../../composables/use-meta';
+
+useMeta({ title: 'Fullcalendar Drag and Drop Event' });
 
     const defaultParams = ref({
         id: null,

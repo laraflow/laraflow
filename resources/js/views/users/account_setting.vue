@@ -553,12 +553,13 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse eu fugiat nulla p
 </template>
 
 <script setup>
-    import { ref } from "vue";
-    import "../../assets/sass/scrollspyNav.scss";
-    import "../../assets/sass/users/account-setting.scss";
+import {ref} from "vue";
+import "../../assets/sass/scrollspyNav.scss";
+import "../../assets/sass/users/account-setting.scss";
 
-    import { useMeta } from "../../composables/use-meta";
-    useMeta({ title: "Account Setting" });
+import {useMeta} from "../../composables/use-meta";
+
+useMeta({ title: "Account Setting" });
 
     const selected = ref(null);
     const selected_file = ref(null);

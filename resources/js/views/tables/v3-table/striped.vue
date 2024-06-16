@@ -52,10 +52,11 @@
 </template>
 
 <script setup>
-    import { onMounted, ref } from "vue";
+import {onMounted, ref} from "vue";
 
-    import { useMeta } from "../../../composables/use-meta";
-    useMeta({ title: "Striped Table" });
+import {useMeta} from "../../../composables/use-meta";
+
+useMeta({ title: "Striped Table" });
 
     const columns = ref(["name", "position", "office", "age", "start_date", "salary", "actions"]);
     const items = ref([]);

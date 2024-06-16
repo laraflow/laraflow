@@ -183,10 +183,11 @@
 </template>
 
 <script setup>
-    import { onMounted, ref } from "vue";
+import {onMounted, ref} from "vue";
 
-    import { useMeta } from "../../composables/use-meta";
-    useMeta({ title: "Sample" });
+import {useMeta} from "../../composables/use-meta";
+
+useMeta({ title: "Sample" });
 
     const table_1 = ref([]);
 

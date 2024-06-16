@@ -37,10 +37,11 @@
 </template>
 
 <script setup>
-    import { onMounted, ref } from "vue";
+import {onMounted, ref} from "vue";
 
-    import { useMeta } from "../../../composables/use-meta";
-    useMeta({ title: "Default Order Sorting Table" });
+import {useMeta} from "../../../composables/use-meta";
+
+useMeta({ title: "Default Order Sorting Table" });
 
     const columns = ref(["name", "position", "office", "age", "start_date", "salary", "actions"]);
     const items = ref([]);

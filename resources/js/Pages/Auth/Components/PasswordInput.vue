@@ -44,6 +44,12 @@ onMounted(() => {
     }
 });
 
+defineExpose({focus: () => input.value.focus()});
+
+defineOptions({
+    inheritAttrs: false
+});
+
 const togglePasswordType = () => {
     if (pwd_type.value === "password") {
         pwd_type.value = "text";
@@ -54,10 +60,9 @@ const togglePasswordType = () => {
 </script>
 
 <template>
-    <div id="password" class="field-wrapper input">
+    <div class="field-wrapper input">
         <div class="d-flex justify-content-between">
-            <label :for="id"
-                   :class="{'text-danger' : hasError}">
+            <label :for="id">
                 {{ label }}
             </label>
             <Link
@@ -92,6 +97,7 @@ const togglePasswordType = () => {
                max="255"
                maxlength="255"
                v-model="model"
+               ref="input"
                v-bind="{...$attrs, class:null}"
                :placeholder="$t('password_placeholder')"/>
         <svg

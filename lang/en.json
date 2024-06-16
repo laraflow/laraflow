@@ -28,6 +28,7 @@
     "email_placeholder": "Enter email address",
     "password": "Password",
     "password_placeholder": "Enter password",
+    "remember_me_placeholder": "Remember Me",
     "confirm_password": "Confirm Password",
     "confirm_password_placeholder": "Retype the password",
     "forgot_password_prompt": "Forgot Password?",

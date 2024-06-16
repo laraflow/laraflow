@@ -18,7 +18,7 @@ const props = defineProps({
     message: {
         type: String,
     },
-})
+});
 
 const hasError = computed(() => {
     return props.message && props.message.length > 0;
@@ -37,14 +37,18 @@ onMounted(() => {
     }
 });
 
-defineExpose({focus: () => input.value.focus()});
+defineExpose({focus: () => input.value.focus()})
+
+defineOptions({
+    inheritAttrs: false
+});
+
 </script>
 
 <template>
-    <div id="username-field" class="field-wrapper input">
+    <div class="field-wrapper input">
         <label
-            :for="id"
-            :class="{'text-danger' : hasError}">
+            :for="id">
             {{ label }}
         </label>
         <svg
@@ -76,6 +80,5 @@ defineExpose({focus: () => input.value.focus()});
         <div class="invalid-feedback d-block text-danger" v-show="hasError">
             {{ message }}
         </div>
-
     </div>
 </template>

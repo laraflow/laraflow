@@ -155,11 +155,12 @@
 </template>
 
 <script setup>
-    import { ref } from "vue";
-    import "../../assets/sass/authentication/auth-boxed.scss";
+import {ref} from "vue";
+import "../../assets/sass/authentication/auth-boxed.scss";
 
-    import { useMeta } from "../../composables/use-meta";
-    useMeta({ title: "Register Boxed" });
+import {useMeta} from "../../composables/use-meta";
+
+useMeta({ title: "Register Boxed" });
 
     const pwd_type = ref("password");
 

@@ -42,10 +42,11 @@
 </template>
 
 <script setup>
-    import { onMounted, ref } from "vue";
+import {onMounted, ref} from "vue";
 
-    import { useMeta } from "../../../composables/use-meta";
-    useMeta({ title: "Live Dom Ordering Table" });
+import {useMeta} from "../../../composables/use-meta";
+
+useMeta({ title: "Live Dom Ordering Table" });
 
     const columns = ref(["name", "age", "position", "office"]);
     const items = ref([]);

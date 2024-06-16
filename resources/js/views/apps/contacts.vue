@@ -301,11 +301,12 @@
 </style>
 
 <script setup>
-    import { computed, onMounted, ref } from "vue";
-    import "../../assets/sass/apps/contacts.scss";
+import {computed, onMounted, ref} from "vue";
+import "../../assets/sass/apps/contacts.scss";
 
-    import { useMeta } from "../../composables/use-meta";
-    useMeta({ title: "Contact Profile" });
+import {useMeta} from "../../composables/use-meta";
+
+useMeta({ title: "Contact Profile" });
 
     let addContactModal = ref(null);
     const params = ref({ id: null, name: "", email: "", role: "", phone: "", location: "" });

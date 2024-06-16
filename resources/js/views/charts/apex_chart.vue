@@ -378,15 +378,16 @@ series_8: [44, 55, 67, 83],
 </template>
 
 <script setup>
-    import { computed, ref } from "vue";
-    import "../../assets/sass/scrollspyNav.scss";
-    import highlight from "../../components/plugins/highlight.vue";
+import {computed, ref} from "vue";
+import "../../assets/sass/scrollspyNav.scss";
+import highlight from "../../components/plugins/highlight.vue";
 
-    import apexchart from "vue3-apexcharts";
-    import { useStore } from "vuex";
+import apexchart from "vue3-apexcharts";
+import {useStore} from "vuex";
 
-    import { useMeta } from "../../composables/use-meta";
-    useMeta({ title: "Apex Chart" });
+import {useMeta} from "../../composables/use-meta";
+
+useMeta({ title: "Apex Chart" });
 
     const store = useStore();
 

@@ -678,8 +678,9 @@
 </template>
 
 <script setup>
-    import "../../assets/sass/pages/faq/faq.scss";
+import "../../assets/sass/pages/faq/faq.scss";
 
-    import { useMeta } from "../../composables/use-meta";
-    useMeta({ title: "FAQ" });
+import {useMeta} from "../../composables/use-meta";
+
+useMeta({ title: "FAQ" });
 </script>

@@ -1,5 +1,5 @@
-import { useHead } from '@vueuse/head';
-import { unref, computed } from 'vue';
+import {useHead} from '@vueuse/head';
+import {computed, unref} from 'vue';
 
 let siteTitle = 'hello';
 let separator = '|';

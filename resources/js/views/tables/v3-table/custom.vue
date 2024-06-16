@@ -191,11 +191,12 @@
 </style>
 
 <script setup>
-    import { onMounted, ref } from "vue";
-    import "../../../assets/sass/elements/tooltip.scss";
+import {onMounted, ref} from "vue";
+import "../../../assets/sass/elements/tooltip.scss";
 
-    import { useMeta } from "../../../composables/use-meta";
-    useMeta({ title: "Custom Table" });
+import {useMeta} from "../../../composables/use-meta";
+
+useMeta({ title: "Custom Table" });
     //table 1
     const columns = ref(["id", "first_name", "last_name", "email", "phone", "profile", "status", "actions"]);
     const items = ref([]);

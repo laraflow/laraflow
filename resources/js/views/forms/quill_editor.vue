@@ -142,16 +142,17 @@
 </style>
 
 <script setup>
-    import { onMounted, ref } from "vue";
+import {onMounted, ref} from "vue";
 
-    import { quillEditor } from "vue3-quill";
-    import "vue3-quill/lib/vue3-quill.css";
+import {quillEditor} from "vue3-quill";
+import "vue3-quill/lib/vue3-quill.css";
 
-    import "../../assets/sass/scrollspyNav.scss";
-    import highlight from "../../components/plugins/highlight.vue";
+import "../../assets/sass/scrollspyNav.scss";
+import highlight from "../../components/plugins/highlight.vue";
 
-    import { useMeta } from "../../composables/use-meta";
-    useMeta({ title: "Quill Editor" });
+import {useMeta} from "../../composables/use-meta";
+
+useMeta({ title: "Quill Editor" });
 
     const code_arr = ref([]);
     const content1 = ref(`

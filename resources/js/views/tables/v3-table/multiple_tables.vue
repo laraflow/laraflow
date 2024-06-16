@@ -93,10 +93,11 @@
 </template>
 
 <script setup>
-    import { onMounted, ref } from "vue";
+import {onMounted, ref} from "vue";
 
-    import { useMeta } from "../../../composables/use-meta";
-    useMeta({ title: "Multiple Tables" });
+import {useMeta} from "../../../composables/use-meta";
+
+useMeta({ title: "Multiple Tables" });
 
     const code_arr = ref([]);
     //table 1

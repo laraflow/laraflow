@@ -312,11 +312,12 @@
     </div>
 </template>
 <script setup>
-    import { onMounted, ref } from "vue";
-    import "../../assets/sass/apps/chat.scss";
+import {onMounted, ref} from "vue";
+import "../../assets/sass/apps/chat.scss";
 
-    import { useMeta } from "../../composables/use-meta";
-    useMeta({ title: "Chat" });
+import {useMeta} from "../../composables/use-meta";
+
+useMeta({ title: "Chat" });
 
     const is_show_user_menu = ref(false);
     let contact_list = ref([]);

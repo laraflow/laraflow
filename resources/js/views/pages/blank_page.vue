@@ -36,6 +36,7 @@
 </style>
 
 <script setup>
-    import { useMeta } from "../../composables/use-meta";
-    useMeta({ title: "Blank Page" });
+import {useMeta} from "../../composables/use-meta";
+
+useMeta({ title: "Blank Page" });
 </script>

@@ -32,11 +32,12 @@
 </template>
 
 <script setup>
-    import { onMounted, ref } from 'vue';
-    import Vue3Datatable from '@bhplugin/vue3-datatable';
+import {onMounted, ref} from 'vue';
+import Vue3Datatable from '@bhplugin/vue3-datatable';
 
-    import { useMeta } from '../../../composables/use-meta';
-    useMeta({ title: 'Checkbox Table' });
+import {useMeta} from '../../../composables/use-meta';
+
+useMeta({ title: 'Checkbox Table' });
 
     const cols = ref([
         { field: 'id', title: 'ID', isUnique: true },

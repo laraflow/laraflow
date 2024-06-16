@@ -84,13 +84,14 @@
 </template>
 
 <script setup>
-    import { onMounted, ref, computed } from 'vue';
-    import Vue3Datatable from '@bhplugin/vue3-datatable';
-    import { useStore } from 'vuex';
-    import ApexChart from 'vue3-apexcharts';
+import {computed, onMounted, ref} from 'vue';
+import Vue3Datatable from '@bhplugin/vue3-datatable';
+import {useStore} from 'vuex';
+import ApexChart from 'vue3-apexcharts';
 
-    import { useMeta } from '../../../composables/use-meta';
-    useMeta({ title: 'Advance Table' });
+import {useMeta} from '../../../composables/use-meta';
+
+useMeta({ title: 'Advance Table' });
     const store = useStore();
 
     const cols = ref([

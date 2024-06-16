@@ -148,10 +148,11 @@
 </style>
 
 <script setup>
-    import { onMounted, ref } from "vue";
+import {onMounted, ref} from "vue";
 
-    import { useMeta } from "../../../composables/use-meta";
-    useMeta({ title: "Miscellaneous Table" });
+import {useMeta} from "../../../composables/use-meta";
+
+useMeta({ title: "Miscellaneous Table" });
 
     //table 1
     const columns = ref(["name", "position", "office", "age", "start_date", "salary"]);

@@ -1128,10 +1128,11 @@
 </template>
 
 <script setup>
-    import { onMounted, ref, reactive } from 'vue';
-    import { useI18n } from 'vue-i18n';
-    import { useStore } from 'vuex';
-    const store = useStore();
+import {onMounted, reactive, ref} from 'vue';
+import {useI18n} from 'vue-i18n';
+import {useStore} from 'vuex';
+
+const store = useStore();
 
     const selectedLang = ref(null);
     const countryList = ref(store.state.countryList);

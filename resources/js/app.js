@@ -1,13 +1,14 @@
 import './bootstrap';
 import './assets/sass/app.scss';
-import { createApp, h } from 'vue';
-import { createInertiaApp } from '@inertiajs/vue3';
-import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
-import { ZiggyVue } from '../../vendor/tightenco/ziggy';
+import {createApp, h} from 'vue';
+import {createInertiaApp} from '@inertiajs/vue3';
+import {resolvePageComponent} from 'laravel-vite-plugin/inertia-helpers';
+import {ZiggyVue} from '../../vendor/tightenco/ziggy';
 import store from "./store";
 
 // bootstrap
 import * as bootstrap from "bootstrap";
+
 window.bootstrap = bootstrap;
 
 // modals
@@ -19,6 +20,7 @@ import "vue3-perfect-scrollbar/dist/vue3-perfect-scrollbar.css";
 
 //Sweetalert
 import Swal from "sweetalert2";
+
 window.Swal = Swal;
 
 // nouislider - later remove and add to page due to not working in page
@@ -29,13 +31,13 @@ import "vue3-nouislider/dist/vue3-nouislider.css";
 import Maska from "maska";
 
 // smooth scroll
-import { registerScrollSpy } from "vue3-scroll-spy/dist/index";
+import {registerScrollSpy} from "vue3-scroll-spy/dist/index";
 
 //vue-i18n
 import i18n from "./i18n";
 
 // datatables
-import { ClientTable } from "v-tables-3";
+import {ClientTable} from "v-tables-3";
 
 // json to excel
 import vue3JsonExcel from "vue3-json-excel";
@@ -46,6 +48,7 @@ import "vue3-form-wizard/dist/style.css";
 
 // set default settings
 import appSetting from "./app-setting";
+
 window.$appSetting = appSetting;
 
 //markdown editor
@@ -57,8 +60,8 @@ const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
     resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue')),
-    setup({ el, App, props, plugin }) {
-        return createApp({ render: () => h(App, props) })
+    setup({el, App, props, plugin}) {
+        return createApp({render: () => h(App, props)})
             .use(plugin)
             .use(ZiggyVue)
             .use(store)
@@ -71,12 +74,14 @@ createInertiaApp({
             .use(VueFormWizard)
             .use(VueEasymde)
             .mount(el);
+
+        // registerScrollSpy(vueApp, {offset: 118});
+
+        return vueApp;
     },
     progress: {
         color: '#4B5563',
     },
 });
-
-// registerScrollSpy(app, { offset: 118 });
 
 window.$appSetting.init();

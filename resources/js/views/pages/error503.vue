@@ -24,8 +24,9 @@
 </template>
 
 <script setup>
-    import "../../assets/sass/pages/error/style-503.scss";
+import "../../assets/sass/pages/error/style-503.scss";
 
-    import { useMeta } from "../../composables/use-meta";
-    useMeta({ title: "Error 503" });
+import {useMeta} from "../../composables/use-meta";
+
+useMeta({ title: "Error 503" });
 </script>

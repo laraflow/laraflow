@@ -234,14 +234,15 @@ for (i = 0; i &lt; toggler.length; i++) {
 </template>
 
 <script setup>
-    import { onMounted, ref } from "vue";
+import {onMounted, ref} from "vue";
 
-    import "../../assets/sass/scrollspyNav.scss";
-    import "../../assets/sass/elements/custom-tree_view.scss";
-    import highlight from "../../components/plugins/highlight.vue";
+import "../../assets/sass/scrollspyNav.scss";
+import "../../assets/sass/elements/custom-tree_view.scss";
+import highlight from "../../components/plugins/highlight.vue";
 
-    import { useMeta } from "../../composables/use-meta";
-    useMeta({ title: "Treeview" });
+import {useMeta} from "../../composables/use-meta";
+
+useMeta({ title: "Treeview" });
 
     const code_arr = ref([]);
 

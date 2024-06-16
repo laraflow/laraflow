@@ -717,12 +717,13 @@
 </template>
 
 <script setup>
-    import { ref } from "vue";
-    import "../../assets/sass/scrollspyNav.scss";
-    import highlight from "../../components/plugins/highlight.vue";
+import {ref} from "vue";
+import "../../assets/sass/scrollspyNav.scss";
+import highlight from "../../components/plugins/highlight.vue";
 
-    import { useMeta } from "../../composables/use-meta";
-    useMeta({ title: "Form Layouts" });
+import {useMeta} from "../../composables/use-meta";
+
+useMeta({ title: "Form Layouts" });
 
     const code_arr = ref([]);
     const toggleCode = (name) => {

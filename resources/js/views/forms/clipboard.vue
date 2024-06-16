@@ -337,15 +337,16 @@
 </template>
 
 <script setup>
-    import { ref } from "vue";
-    import "../../assets/sass/scrollspyNav.scss";
-    import "../../assets/sass/forms/custom-clipboard.scss";
-    import highlight from "../../components/plugins/highlight.vue";
+import {ref} from "vue";
+import "../../assets/sass/scrollspyNav.scss";
+import "../../assets/sass/forms/custom-clipboard.scss";
+import highlight from "../../components/plugins/highlight.vue";
 
-    import useClipboard from "vue-clipboard3";
+import useClipboard from "vue-clipboard3";
 
-    import { useMeta } from "../../composables/use-meta";
-    useMeta({ title: "Clipboard" });
+import {useMeta} from "../../composables/use-meta";
+
+useMeta({ title: "Clipboard" });
 
     const code_arr = ref([]);
     const message1 = ref("http://www.admin-dashboard.com");

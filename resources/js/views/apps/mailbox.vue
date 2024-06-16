@@ -872,14 +872,15 @@
     }
 </style>
 <script setup>
-    import { computed, onMounted, ref } from "vue";
-    import { quillEditor } from "vue3-quill";
-    import "vue3-quill/lib/vue3-quill.css";
+import {computed, onMounted, ref} from "vue";
+import {quillEditor} from "vue3-quill";
+import "vue3-quill/lib/vue3-quill.css";
 
-    import "../../assets/sass/apps/mailbox.scss";
+import "../../assets/sass/apps/mailbox.scss";
 
-    import { useMeta } from "../../composables/use-meta";
-    useMeta({ title: "Mailbox" });
+import {useMeta} from "../../composables/use-meta";
+
+useMeta({ title: "Mailbox" });
 
     const default_data = { id: null, from: "info@mail.com", to: "", cc: "", title: "", file: null, description: "" };
 

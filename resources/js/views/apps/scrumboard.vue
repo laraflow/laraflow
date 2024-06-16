@@ -281,13 +281,14 @@
 </template>
 
 <script setup>
-    import { onMounted, ref } from "vue";
+import {onMounted, ref} from "vue";
 
-    import "../../assets/sass/apps/scrumboard.scss";
-    import { VueDraggableNext as draggable } from "vue-draggable-next";
+import "../../assets/sass/apps/scrumboard.scss";
+import {VueDraggableNext as draggable} from "vue-draggable-next";
 
-    import { useMeta } from "../../composables/use-meta";
-    useMeta({ title: "Scrum Task Board" });
+import {useMeta} from "../../composables/use-meta";
+
+useMeta({ title: "Scrum Task Board" });
 
     const params = ref({ id: null, title: "" });
     const params_task = ref({ project_id: null, task_id: null, title: "", description: "" });

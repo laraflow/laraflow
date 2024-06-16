@@ -40,13 +40,16 @@ onMounted(() => {
 
 defineExpose({focus: () => input.value.focus()});
 
+defineOptions({
+    inheritAttrs: false
+});
+
 </script>
 
 <template>
-    <div id="username-field" class="field-wrapper input">
+    <div class="field-wrapper input">
         <label
-            :for="id"
-            :class="{'text-danger' : hasError}">
+            :for="id">
             {{ label }}
         </label>
         <svg

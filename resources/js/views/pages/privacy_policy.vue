@@ -125,10 +125,11 @@
 </template>
 
 <script setup>
-    import "../../assets/sass/pages/privacy/privacy.scss";
+import "../../assets/sass/pages/privacy/privacy.scss";
 
-    import { useMeta } from "../../composables/use-meta";
-    useMeta({ title: "Privacy Policy" });
+import {useMeta} from "../../composables/use-meta";
+
+useMeta({ title: "Privacy Policy" });
 
     const print = () => {
         window.print();

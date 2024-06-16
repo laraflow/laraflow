@@ -1338,12 +1338,13 @@
 </style>
 
 <script setup>
-    import { ref } from "vue";
-    import "../../assets/sass/scrollspyNav.scss";
-    import highlight from "../../components/plugins/highlight.vue";
+import {ref} from "vue";
+import "../../assets/sass/scrollspyNav.scss";
+import highlight from "../../components/plugins/highlight.vue";
 
-    import { useMeta } from "../../composables/use-meta";
-    useMeta({ title: "Checkbox and Radio" });
+import {useMeta} from "../../composables/use-meta";
+
+useMeta({ title: "Checkbox and Radio" });
 
     const code_arr = ref([]);
     const radio_1 = ref("radio-2");

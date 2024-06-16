@@ -72,11 +72,12 @@
 </template>
 
 <script setup>
-    import { ref } from "vue";
-    import "../../assets/sass/authentication/auth-boxed.scss";
+import {ref} from "vue";
+import "../../assets/sass/authentication/auth-boxed.scss";
 
-    import { useMeta } from "../../composables/use-meta";
-    useMeta({ title: "Login Boxed" });
+import {useMeta} from "../../composables/use-meta";
+
+useMeta({ title: "Login Boxed" });
 
     const pwd_type = ref("password");
 

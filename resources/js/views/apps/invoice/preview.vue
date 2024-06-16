@@ -185,11 +185,12 @@
 </template>
 
 <script setup>
-    import { onMounted, ref } from "vue";
-    import "../../../assets/sass/apps/invoice-preview.scss";
+import {onMounted, ref} from "vue";
+import "../../../assets/sass/apps/invoice-preview.scss";
 
-    import { useMeta } from "../../../composables/use-meta";
-    useMeta({ title: "Invoice Preview" });
+import {useMeta} from "../../../composables/use-meta";
+
+useMeta({ title: "Invoice Preview" });
 
     const items = ref([]);
     const columns = ref([]);

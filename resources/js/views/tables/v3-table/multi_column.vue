@@ -38,10 +38,11 @@
 </template>
 
 <script setup>
-    import { onMounted, ref } from "vue";
+import {onMounted, ref} from "vue";
 
-    import { useMeta } from "../../../composables/use-meta";
-    useMeta({ title: "Multi Column Ordering Table" });
+import {useMeta} from "../../../composables/use-meta";
+
+useMeta({ title: "Multi Column Ordering Table" });
 
     const columns = ref(["name", "position", "office", "age", "start_date", "salary"]);
     const items = ref([]);

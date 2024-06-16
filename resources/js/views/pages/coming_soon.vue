@@ -150,12 +150,13 @@
 </template>
 
 <script setup>
-    import { onMounted, ref } from "vue";
+import {onMounted, ref} from "vue";
 
-    import "../../assets/sass/pages/coming-soon/style.scss";
+import "../../assets/sass/pages/coming-soon/style.scss";
 
-    import { useMeta } from "../../composables/use-meta";
-    useMeta({ title: "Comming Soon" });
+import {useMeta} from "../../composables/use-meta";
+
+useMeta({ title: "Comming Soon" });
 
     const days = ref(null);
     const hours = ref(null);

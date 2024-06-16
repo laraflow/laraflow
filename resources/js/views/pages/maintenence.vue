@@ -21,8 +21,9 @@
 </template>
 
 <script setup>
-    import "../../assets/sass/pages/error/style-maintanence.scss";
+import "../../assets/sass/pages/error/style-maintanence.scss";
 
-    import { useMeta } from "../../composables/use-meta";
-    useMeta({ title: "Maintenence" });
+import {useMeta} from "../../composables/use-meta";
+
+useMeta({ title: "Maintenence" });
 </script>
