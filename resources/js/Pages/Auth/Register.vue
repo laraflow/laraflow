@@ -109,7 +109,7 @@ const submit = () => {
                     </BooleanInput>
                 </div>
 
-                <PrimaryButton :label="$t('register_btn')"/>
+                <PrimaryButton :label="$t('register_btn')"  :processing="form.processing"/>
             </div>
         </form>
     </GuestLayout>

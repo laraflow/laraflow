@@ -51,7 +51,7 @@ const submit = () => {
                     :can-reset-password="canResetPassword"
                 />
 
-                <PrimaryButton :label="$t('confirm_password_btn')"/>
+                <PrimaryButton :label="$t('confirm_password_btn')"  :processing="form.processing"/>
             </div>
         </form>
     </GuestLayout>

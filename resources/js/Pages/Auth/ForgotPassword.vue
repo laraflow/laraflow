@@ -47,7 +47,7 @@ const submit = () => {
                     :message="form.errors.email"
                 />
 
-                <PrimaryButton :label="$t('forgot_password_btn')"/>
+                <PrimaryButton :label="$t('forgot_password_btn')"  :processing="form.processing"/>
             </div>
         </form>
     </GuestLayout>

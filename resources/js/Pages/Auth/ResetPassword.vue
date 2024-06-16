@@ -73,7 +73,7 @@ const submit = () => {
                     :can-reset-password="false"
                 />
 
-                <PrimaryButton :label="$t('reset_password_btn')"/>
+                <PrimaryButton :label="$t('reset_password_btn')"  :processing="form.processing"/>
             </div>
         </form>
     </GuestLayout>

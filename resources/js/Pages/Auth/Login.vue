@@ -82,7 +82,7 @@ const submit = () => {
                     :message="form.errors.remember"
                 />
 
-                <PrimaryButton :label="$t('login_btn')" :disabled="form.processing"/>
+                <PrimaryButton :label="$t('login_btn')" :processing="form.processing"/>
 
                 <p class="signup-link" v-show="canRegister">
                     {{ $t('register_prompt') }}
