@@ -5,18 +5,16 @@ import {onMounted} from "vue";
 const store = useStore();
 
 onMounted(() => {
-    toggleMode();
+    window.$appSetting.toggleMode();
 });
 
-const toggleMode = (mode) => {
-    window.$appSetting.toggleMode(mode);
-};
 </script>
 
 <template>
     <div class="dark-mode d-flex align-items-center">
         <a v-if="$store.state.dark_mode === 'light'" href="javascript:;"
-           class="d-flex align-items-center" @click="toggleMode('dark')">
+           class="d-flex align-items-center"
+           @click="$store.commit('toggleDarkMode', 'light')">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -42,7 +40,8 @@ const toggleMode = (mode) => {
             <span class="ms-2">Light</span>
         </a>
         <a v-if="$store.state.dark_mode === 'dark'" href="javascript:;"
-           class="d-flex align-items-center" @click="toggleMode('system')">
+           class="d-flex align-items-center"
+           @click="$store.commit('toggleDarkMode', 'dark')">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -60,7 +59,8 @@ const toggleMode = (mode) => {
             <span class="ms-2">Dark</span>
         </a>
         <a v-if="$store.state.dark_mode === 'system'" href="javascript:;"
-           class="d-flex align-items-center" @click="toggleMode('light')">
+           class="d-flex align-items-center"
+           @click="$store.commit('toggleDarkMode', 'system')">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"

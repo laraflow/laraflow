@@ -51,16 +51,12 @@ export default new createStore({
             value = value || "light";
             localStorage.setItem("dark_mode", value);
             state.dark_mode = value;
-            if (value == "light") {
+            if (value === "light") {
                 state.is_dark_mode = false;
-            } else if (value == "dark") {
+            } else if (value === "dark") {
                 state.is_dark_mode = true;
-            } else if (value == "system") {
-                if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-                    state.is_dark_mode = true;
-                } else {
-                    state.is_dark_mode = false;
-                }
+            } else if (value === "system") {
+                state.is_dark_mode = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
             }
 
             if (state.is_dark_mode) {

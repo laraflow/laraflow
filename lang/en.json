@@ -31,6 +31,8 @@
     "remember_me_placeholder": "Remember Me",
     "confirm_password": "Confirm Password",
     "confirm_password_placeholder": "Retype the password",
+    "confirm_password_form_subtitle": "This is a secure area of the application. Please confirm your password before continuing.",
+    "confirm_password_btn": "Confirm",
     "forgot_password_prompt": "Forgot Password?",
     "login_form_title": "Log In",
     "login_form_subtitle": "Log in to your account to continue.",
@@ -42,5 +44,10 @@
     "register_btn": "Register",
     "forgot_password_form_title": "Forgot Password",
     "forgot_password_form_subtitle": "Forgot your password? No problem. Just let us know your email address and we will email you a password reset\n            link that will allow you to choose a new one.",
-    "forgot_password_btn": "Email Password Reset Link"
+    "forgot_password_btn": "Email Password Reset Link",
+    "reset_password_form_title": "Reset Password",
+    "reset_password_form_subtitle": "Forgot your password? No problem. Just let us know your email address and we will email you a password reset\n            link that will allow you to choose a new one.",
+    "reset_password_btn": "Reset Password",
+    "new_password": "New Password",
+    "new_password_confirm": "Confirm New Password"
 }

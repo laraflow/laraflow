@@ -5,13 +5,30 @@ import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import {Head, useForm} from '@inertiajs/vue3';
+import EmailInput from "@/Pages/Auth/Components/EmailInput.vue";
+import PasswordInput from "@/Pages/Auth/Components/PasswordInput.vue";
 
 const form = useForm({
     password: '',
 });
 
+const validate = () => {
+    form.clearErrors();
+
+    if (form.password === '')
+        form.setError('password', "This password field is required");
+
+    return !form.hasErrors;
+}
+
 const submit = () => {
     form.post(route('password.confirm'), {
+        preserveScroll: true,
+        onBefore: () => {
+            if (!validate()) {
+                return false
+            }
+        },
         onFinish: () => form.reset(),
     });
 };
@@ -19,31 +36,22 @@ const submit = () => {
 
 <template>
     <GuestLayout>
-        <Head title="Confirm Password" />
-
-        <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
-            This is a secure area of the application. Please confirm your password before continuing.
-        </div>
-
-        <form @submit.prevent="submit">
-            <div>
-                <InputLabel for="password" value="Password" />
-                <TextInput
-                    id="password"
-                    type="password"
-                    class="mt-1 block w-full"
+        <Head :title="$t('confirm_password_form_title')"/>
+        <h1>{{ $t('confirm_password_form_title') }}</h1>
+        <p class="mb-1">
+            {{ $t('confirm_password_form_subtitle') }}
+        </p>
+        <form class="text-start" @submit.prevent="submit">
+            <div class="form">
+                <PasswordInput
+                    tabindex="2"
+                    :label="$t('password')"
                     v-model="form.password"
-                    required
-                    autocomplete="current-password"
-                    autofocus
+                    :message="form.errors.password"
+                    :can-reset-password="canResetPassword"
                 />
-                <InputError class="mt-2" :message="form.errors.password" />
-            </div>
 
-            <div class="flex justify-end mt-4">
-                <PrimaryButton class="ms-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    Confirm
-                </PrimaryButton>
+                <PrimaryButton :label="$t('confirm_password_btn')"/>
             </div>
         </form>
     </GuestLayout>

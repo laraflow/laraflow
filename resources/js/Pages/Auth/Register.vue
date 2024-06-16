@@ -30,8 +30,8 @@ const validate = () => {
     if (!form.accept_terms)
         form.setError('accept_terms', "This accept terms field is required");
 
-    // if (form.password !== form.password_confirmation)
-    //     form.setError('password', "This password & password confirmation field has to be same");
+    if (form.password !== form.password_confirmation)
+        form.setError('password', "This password & password confirmation field has to be same");
 
     return !form.hasErrors;
 }
@@ -108,6 +108,7 @@ const submit = () => {
                         .
                     </BooleanInput>
                 </div>
+
                 <PrimaryButton :label="$t('register_btn')"/>
             </div>
         </form>

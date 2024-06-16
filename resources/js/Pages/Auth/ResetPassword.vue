@@ -1,10 +1,8 @@
 <script setup>
 import GuestLayout from '@/Layouts/GuestLayout.vue';
-import InputError from '@/Components/InputError.vue';
-import InputLabel from '@/Components/InputLabel.vue';
-import PrimaryButton from '@/Components/PrimaryButton.vue';
-import TextInput from '@/Components/TextInput.vue';
-import {Head, useForm} from '@inertiajs/vue3';
+import {Head, Link, useForm} from '@inertiajs/vue3';
+import PasswordInput from "@/Pages/Auth/Components/PasswordInput.vue";
+import PrimaryButton from "@/Pages/Auth/Components/PrimaryButton.vue";
 
 const props = defineProps({
     email: {
@@ -24,68 +22,58 @@ const form = useForm({
     password_confirmation: '',
 });
 
+const validate = () => {
+    form.clearErrors();
+
+    if (form.password === '')
+        form.setError('password', "This new password field is required");
+
+    if (form.password !== form.password_confirmation)
+        form.setError('password', "This new password & new password confirmation field has to be same");
+
+    return !form.hasErrors;
+}
+
 const submit = () => {
     form.post(route('password.store'), {
-        onFinish: () => form.reset('password', 'password_confirmation'),
+        preserveScroll: true,
+        onBefore: () => {
+            if (!validate()) {
+                return false
+            }
+        },
+        onSuccess: () => form.reset('password', 'password_confirmation'),
     });
 };
 </script>
 
 <template>
     <GuestLayout>
-        <Head title="Reset Password" />
-
-        <form @submit.prevent="submit">
-            <div>
-                <InputLabel for="email" value="Email" />
-
-                <TextInput
-                    id="email"
-                    type="email"
-                    class="mt-1 block w-full"
-                    v-model="form.email"
-                    required
-                    autofocus
-                    autocomplete="username"
-                />
-
-                <InputError class="mt-2" :message="form.errors.email" />
-            </div>
-
-            <div class="mt-4">
-                <InputLabel for="password" value="Password" />
-
-                <TextInput
-                    id="password"
-                    type="password"
-                    class="mt-1 block w-full"
+        <Head :title="$t('reset_password_form_title')"/>
+        <h1>{{ $t('reset_password_form_title') }}</h1>
+        <p class="signup-link register mb-1">
+            {{ $t('register_form_subtitle') }}
+            <Link :href="route('login')">{{ $t('login_btn') }}</Link>
+        </p>
+        <form class="text-start" @submit.prevent="submit">
+            <div class="form">
+                <PasswordInput
+                    tabindex="3"
+                    :label="$t('new_password')"
                     v-model="form.password"
-                    required
-                    autocomplete="new-password"
+                    :message="form.errors.password"
+                    :can-reset-password="false"
                 />
 
-                <InputError class="mt-2" :message="form.errors.password" />
-            </div>
-
-            <div class="mt-4">
-                <InputLabel for="password_confirmation" value="Confirm Password" />
-
-                <TextInput
-                    id="password_confirmation"
-                    type="password"
-                    class="mt-1 block w-full"
+                <PasswordInput
+                    tabindex="4"
+                    :label="$t('new_password_confirm')"
                     v-model="form.password_confirmation"
-                    required
-                    autocomplete="new-password"
+                    :message="form.errors.password"
+                    :can-reset-password="false"
                 />
 
-                <InputError class="mt-2" :message="form.errors.password_confirmation" />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <PrimaryButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    Reset Password
-                </PrimaryButton>
+                <PrimaryButton :label="$t('reset_password_btn')"/>
             </div>
         </form>
     </GuestLayout>

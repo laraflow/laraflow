@@ -37,7 +37,6 @@ const validate = () => {
 
     return !form.hasErrors;
 }
-
 const submit = () => {
     form.post(route('login'), {
         preserveScroll: true,
@@ -48,7 +47,7 @@ const submit = () => {
         },
         onSuccess: () => form.reset('password'),
     });
-};
+}
 </script>
 
 <template>

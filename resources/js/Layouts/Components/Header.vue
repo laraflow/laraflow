@@ -1,5 +1,4 @@
 <script setup>
-import {onMounted} from 'vue';
 import {Link} from "@inertiajs/vue3";
 import {useStore} from 'vuex';
 import Logo from "@/Layouts/Components/Logo.vue";
