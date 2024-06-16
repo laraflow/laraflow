@@ -14,7 +14,7 @@
                     </svg>
                 </h5>
             </a>
-            <perfect-scrollbar class="sidbarchat p-3" tag="div">
+            <PerfectScrollbar class="sidbarchat p-3" tag="div">
                 <a class="btn-close" href="javascript:;" @click="isOpen = !isOpen"> </a>
                 <h5 class="mb-0 text-center">TEMPLATE CUSTOMIZER</h5>
                 <p class="text-center">Set preferences that will be cookied for your live preview demonstration.</p>
@@ -134,7 +134,7 @@
                         <label class="custom-control-label" for="full">Full</label>
                     </div>
                 </div>
-            </perfect-scrollbar>
+            </PerfectScrollbar>
         </div>
     </div>
 </template>
@@ -156,6 +156,7 @@ const setLayoutStyle = () => {
 };
 
 const isOpen = ref(null);
+
 onMounted(() => {
     setTemplateStyle();
     setMenuStyle();

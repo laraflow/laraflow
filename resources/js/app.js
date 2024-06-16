@@ -61,21 +61,22 @@ createInertiaApp({
     title: (title) => `${title} - ${appName}`,
     resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue')),
     setup({el, App, props, plugin}) {
-        return createApp({render: () => h(App, props)})
+        const vueApp = createApp({render: () => h(App, props)})
             .use(plugin)
             .use(ZiggyVue)
             .use(store)
             .use(i18n)
-            // .use(PerfectScrollbar)
+            .use(PerfectScrollbar)
             .use(VueNouislider)
             .use(Maska)
             .use(ClientTable)
             .use(vue3JsonExcel)
             .use(VueFormWizard)
-            .use(VueEasymde)
-            .mount(el);
+            .use(VueEasymde);
 
-        // registerScrollSpy(vueApp, {offset: 118});
+        registerScrollSpy(vueApp, {offset: 118});
+
+        vueApp.mount(el);
 
         return vueApp;
     },
