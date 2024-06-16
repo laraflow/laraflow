@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use Diglactic\Breadcrumbs\Breadcrumbs;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 
@@ -31,9 +32,10 @@ class HandleInertiaRequests extends Middleware
     {
         return [
             ...parent::share($request),
-            'auth' => [
-                'user' => $request->user(),
-            ],
+            'auth.user' => $request->user(),
+            'flash.message' => fn() => $request->session()->get('message'),
+            'breadcrumbs.entries' => fn() => Breadcrumbs::generate()->toArray(),
+            'breadcrumbs.current' => fn() => Breadcrumbs::generate()->last(),
         ];
     }
 }

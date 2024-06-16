@@ -10,7 +10,7 @@ import Sidebar from "@/Layouts/Components/Sidebar.vue";
 </script>
 
 <template>
-    <div>
+    <div :class="[$store.state.layout_style, $store.state.menu_style]">
         <Header/>
         <div class="main-container" id="container"
              :class="[!$store.state.is_show_sidebar ? 'sidebar-closed sbar-open' : '', $store.state.menu_style === 'collapsible-vertical' ? 'collapsible-vertical-mobile' : '']">
