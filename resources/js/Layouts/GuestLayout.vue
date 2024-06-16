@@ -1,20 +1,27 @@
 <script setup>
-import ApplicationLogo from '@/Components/ApplicationLogo.vue';
-import { Link } from '@inertiajs/vue3';
+import {useStore} from "vuex";
+
+const store = useStore();
 </script>
 
 <template>
-    <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-900">
-        <div>
-            <Link href="/">
-                <ApplicationLogo class="w-20 h-20 fill-current text-gray-500" />
-            </Link>
-        </div>
-
-        <div
-            class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg"
-        >
-            <slot />
+    <div :class="[$store.state.layout_style, $store.state.menu_style]">
+        <div class="form auth-boxed">
+            <div class="form-container outer">
+                <div class="form-form">
+                    <div class="form-form-wrap">
+                        <div class="form-container">
+                            <div class="form-content">
+                                <slot/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
+
+<style lang="scss">
+@import "../assets/sass/authentication/auth-boxed";
+</style>
