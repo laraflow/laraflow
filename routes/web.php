@@ -1,13 +1,13 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\ConfirmPasswordController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
-use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -81,6 +81,14 @@ Route::middleware('auth')->group(function () {
 
     Route::delete('/profile', [ProfileController::class, 'destroy'])
         ->name('profile.destroy');
+
+    Route::apiResource('users', \App\Http\Controllers\Auth\UserController::class);
+
+    Route::apiResource('teams', \App\Http\Controllers\Auth\TeamController::class);
+
+    Route::apiResource('roles', \App\Http\Controllers\Auth\RoleController::class);
+
+    Route::apiResource('permissions', \App\Http\Controllers\Auth\PermissionController::class);
 
     //DO NOT REMOVE THIS LINE//
 });
