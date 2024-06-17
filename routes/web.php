@@ -5,7 +5,11 @@ use App\Http\Controllers\Auth\EmailVerificationNotificationController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\PasswordController;
+use App\Http\Controllers\Auth\PermissionController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\RoleController;
+use App\Http\Controllers\Auth\TeamController;
+use App\Http\Controllers\Auth\UserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
@@ -82,13 +86,25 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])
         ->name('profile.destroy');
 
-    Route::apiResource('users', \App\Http\Controllers\Auth\UserController::class);
+    Route::get('users/search', [UserController::class, 'search'])
+        ->name('users.search');
 
-    Route::apiResource('teams', \App\Http\Controllers\Auth\TeamController::class);
+    Route::resource('users', UserController::class);
 
-    Route::apiResource('roles', \App\Http\Controllers\Auth\RoleController::class);
+    Route::get('teams/search', [TeamController::class, 'search'])
+        ->name('teams.search');
 
-    Route::apiResource('permissions', \App\Http\Controllers\Auth\PermissionController::class);
+    Route::resource('teams', TeamController::class);
+
+    Route::get('roles/search', [RoleController::class, 'search'])
+        ->name('roles.search');
+
+    Route::resource('roles', RoleController::class);
+
+    Route::get('permissions/search', [PermissionController::class, 'search'])
+        ->name('permissions.search');
+
+    Route::resource('permissions', PermissionController::class);
 
     //DO NOT REMOVE THIS LINE//
 });
