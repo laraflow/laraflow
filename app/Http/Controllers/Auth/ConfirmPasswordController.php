@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 use Inertia\Response;
 
-class ConfirmablePasswordController extends Controller
+class ConfirmPasswordController extends Controller
 {
     /**
      * Show the confirm password view.
