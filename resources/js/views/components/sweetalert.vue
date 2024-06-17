@@ -653,7 +653,7 @@ toast.fire({
     import "../../assets/sass/components/custom-sweetalert.scss";
     import highlight from "../../components/plugins/highlight.vue";
 
-    import { useMeta } from "../../composables/use-meta";
+    import { useMeta } from "@/Composables/use-meta";
     useMeta({ title: "Sweet Alert" });
 
     const code_arr = ref([]);

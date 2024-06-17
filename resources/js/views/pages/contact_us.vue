@@ -164,7 +164,7 @@ import "../../assets/sass/pages/contact_us.scss";
 
 import {GoogleMap, Marker} from "vue3-google-map";
 
-import {useMeta} from "../../composables/use-meta";
+import {useMeta} from "@/Composables/use-meta";
 
 useMeta({ title: "Contact Form" });
 

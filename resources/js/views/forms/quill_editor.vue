@@ -150,7 +150,7 @@ import "vue3-quill/lib/vue3-quill.css";
 import "../../assets/sass/scrollspyNav.scss";
 import highlight from "../../components/plugins/highlight.vue";
 
-import {useMeta} from "../../composables/use-meta";
+import {useMeta} from "@/Composables/use-meta";
 
 useMeta({ title: "Quill Editor" });
 

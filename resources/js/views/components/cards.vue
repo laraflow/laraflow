@@ -860,7 +860,7 @@
     import "../../assets/sass/components/cards/card.scss";
     import highlight from "../../components/plugins/highlight.vue";
 
-    import { useMeta } from "../../composables/use-meta";
+    import { useMeta } from "@/Composables/use-meta";
     useMeta({ title: "Cards" });
 
     const code_arr = ref([]);

@@ -1033,7 +1033,7 @@ import highlight from "../../components/plugins/highlight.vue";
 
 import {NumberSpinner} from "vue3-number-spinner";
 
-import {useMeta} from "../../composables/use-meta";
+import {useMeta} from "@/Composables/use-meta";
 
 useMeta({ title: "Touchspin" });
 

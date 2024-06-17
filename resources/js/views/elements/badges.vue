@@ -356,7 +356,7 @@ import {ref} from "vue";
 import "../../assets/sass/scrollspyNav.scss";
 import highlight from "../../components/plugins/highlight.vue";
 
-import {useMeta} from "../../composables/use-meta";
+import {useMeta} from "@/Composables/use-meta";
 
 useMeta({ title: "Badges" });
 

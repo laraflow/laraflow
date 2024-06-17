@@ -557,7 +557,7 @@ import {ref} from "vue";
 import "../../assets/sass/scrollspyNav.scss";
 import "../../assets/sass/users/account-setting.scss";
 
-import {useMeta} from "../../composables/use-meta";
+import {useMeta} from "@/Composables/use-meta";
 
 useMeta({ title: "Account Setting" });
 

@@ -560,7 +560,7 @@
 <script setup>
 import "../../assets/sass/pages/helpdesk.scss";
 
-import {useMeta} from "../../composables/use-meta";
+import {useMeta} from "@/Composables/use-meta";
 
 useMeta({ title: "Helpdesk" });
 </script>

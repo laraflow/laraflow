@@ -154,7 +154,7 @@ import {onMounted, ref} from "vue";
 
 import "../../assets/sass/pages/coming-soon/style.scss";
 
-import {useMeta} from "../../composables/use-meta";
+import {useMeta} from "@/Composables/use-meta";
 
 useMeta({ title: "Comming Soon" });
 

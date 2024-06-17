@@ -748,7 +748,7 @@
     import "../../assets/sass/components/timeline/custom-timeline.scss";
     import highlight from "../../components/plugins/highlight.vue";
 
-    import { useMeta } from "../../composables/use-meta";
+    import { useMeta } from "@/Composables/use-meta";
     useMeta({ title: "Timeline" });
 
     const code_arr = ref([]);

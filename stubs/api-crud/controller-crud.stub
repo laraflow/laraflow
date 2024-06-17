@@ -1,0 +1,166 @@
+<?php
+
+namespace $CLASS_NAMESPACE$;
+
+use Exception;
+use $MODULE$\$MODEL$;
+use Laraflow\ApiCrud\Exceptions\StoreOperationException;
+use Laraflow\ApiCrud\Exceptions\UpdateOperationException;
+use Laraflow\ApiCrud\Exceptions\DeleteOperationException;
+$RESOURCE_NAMESPACES$
+$REQUEST_NAMESPACES$
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Routing\Controller;
+
+/**
+ * Class $CLASS$
+ * @package $CLASS_NAMESPACE$
+ *
+ * @lrd:start
+ * This class handle create, display, update, delete & restore
+ * operation related to $RESOURCE$
+ * @lrd:end
+ *
+ */
+class $CLASS$ extends Controller
+{
+    /**
+     * @lrd:start
+     * Return a listing of the *$RESOURCE$* resource as collection.
+     *
+     * *```paginate=false``` returns all resource as list not pagination*
+     * @lrd:end
+     *
+     * @param $INDEX_REQUEST$ $request
+     * @return $RESOURCE$Collection|JsonResponse
+     */
+    public function index($INDEX_REQUEST$ $request): $RESOURCE$Collection|JsonResponse
+    {
+        try {
+            $inputs = $request->validated();
+
+            $$RESOURCE_VARIABLE$s = $RESOURCE$::filter($inputs)
+            ->orderBy($request->input('sort', 'id'), $request->input('dir', 'asc'));
+
+           if($request->input('paginate', true)) {
+                $$RESOURCE_VARIABLE$s = $$RESOURCE_VARIABLE$s->paginate($request->input('per_page'));
+           } else {
+                $$RESOURCE_VARIABLE$s = $$RESOURCE_VARIABLE$s->get();
+           }
+
+            return new $RESOURCE$Collection($$RESOURCE_VARIABLE$s);
+
+        } catch (Exception $exception) {
+
+            return response()->failed($exception->getMessage());
+        }
+    }
+
+    /**
+     * @lrd:start
+     * Create a new *$RESOURCE$* resource in storage.
+     * @lrd:end
+     *
+     * @param $STORE_REQUEST$ $request
+     * @return JsonResponse
+     * @throws StoreOperationException
+     */
+    public function store($STORE_REQUEST$ $request): JsonResponse
+    {
+        try {
+            $inputs = $request->validated();
+
+            $$RESOURCE_VARIABLE$ = $RESOURCE$::create($inputs);
+
+            if (!$$RESOURCE_VARIABLE$) {
+                throw (new StoreOperationException)->setModel($RESOURCE$::class);
+            }
+
+            return response()->created([
+                'message' => __('api-crud::messages.resource.created', ['model' => '$MESSAGE_VARIABLE$']),
+                'id' => $$RESOURCE_VARIABLE$->getKey()
+             ]);
+
+        } catch (Exception $exception) {
+
+            return response()->failed($exception->getMessage());
+        }
+    }
+
+    /**
+     * @lrd:start
+     * Return a specified *$RESOURCE$* resource found by id.
+     * @lrd:end
+     *
+     * @param $RESOURCE$ $$RESOURCE_VARIABLE$
+     * @return $RESOURCE$Resource|JsonResponse
+     */
+    public function show($RESOURCE$ $$RESOURCE_VARIABLE$): $RESOURCE$Resource|JsonResponse
+    {
+        try {
+
+            return new $RESOURCE$Resource($$RESOURCE_VARIABLE$);
+
+        } catch (Exception $exception) {
+
+            return response()->failed($exception->getMessage());
+        }
+    }
+
+    /**
+     * @lrd:start
+     * Update a specified *$RESOURCE$* resource using id.
+     * @lrd:end
+     *
+     * @param $UPDATE_REQUEST$ $request
+     * @param $RESOURCE$ $$RESOURCE_VARIABLE$
+     * @return JsonResponse
+     * @throws UpdateOperationException
+     */
+    public function update($UPDATE_REQUEST$ $request, $RESOURCE$ $$RESOURCE_VARIABLE$): JsonResponse
+    {
+        try {
+
+            $inputs = $request->validated();
+
+            if (!$$RESOURCE_VARIABLE$->update($inputs)) {
+
+                throw (new UpdateOperationException)->setModel($RESOURCE$::class, $$RESOURCE_VARIABLE$->getKey());
+            }
+
+            return response()->updated(__('api-crud::messages.resource.updated', ['model' => '$MESSAGE_VARIABLE$']));
+
+        } catch (Exception $exception) {
+
+            return response()->failed($exception->getMessage());
+        }
+    }
+
+    /**
+     * @lrd:start
+     * Soft delete a specified *$RESOURCE$* resource using id.
+     * @lrd:end
+     *
+     * @param $RESOURCE$ $$RESOURCE_VARIABLE$
+     * @return JsonResponse
+     * @throws ModelNotFoundException
+     * @throws DeleteOperationException
+     */
+    public function destroy($RESOURCE$ $$RESOURCE_VARIABLE$)
+    {
+        try {
+
+            if (!$$RESOURCE_VARIABLE$->delete()) {
+
+                throw (new DeleteOperationException())->setModel($RESOURCE$::class, $$RESOURCE_VARIABLE$->getKey());
+            }
+
+            return response()->deleted(__('api-crud::messages.resource.deleted', ['model' => '$MESSAGE_VARIABLE$']));
+
+        } catch (Exception $exception) {
+
+            return response()->failed($exception->getMessage());
+        }
+    }
+}

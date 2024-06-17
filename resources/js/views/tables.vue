@@ -1246,7 +1246,7 @@
     import "../assets/sass/tables/table-basic.scss";
     import highlight from "../components/plugins/highlight.vue";
 
-    import { useMeta } from "../composables/use-meta";
+    import { useMeta } from "@/Composables/use-meta";
     useMeta({ title: "Tables" });
 
     const code_arr = ref([]);

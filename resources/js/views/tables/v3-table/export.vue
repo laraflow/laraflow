@@ -88,7 +88,7 @@ import {onMounted, ref} from "vue";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 
-import {useMeta} from "../../../composables/use-meta";
+import {useMeta} from "@/Composables/use-meta";
 
 useMeta({ title: "Export Table" });
 

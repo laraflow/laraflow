@@ -66,7 +66,7 @@
 import {onMounted, ref} from 'vue';
 import Vue3Datatable from '@bhplugin/vue3-datatable';
 
-import {useMeta} from '../../../composables/use-meta';
+import {useMeta} from '@/Composables/use-meta';
 
 useMeta({ title: 'Column Chooser Table' });
 

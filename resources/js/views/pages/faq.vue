@@ -680,7 +680,7 @@
 <script setup>
 import "../../assets/sass/pages/faq/faq.scss";
 
-import {useMeta} from "../../composables/use-meta";
+import {useMeta} from "@/Composables/use-meta";
 
 useMeta({ title: "FAQ" });
 </script>

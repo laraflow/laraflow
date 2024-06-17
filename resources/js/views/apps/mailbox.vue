@@ -878,7 +878,7 @@ import "vue3-quill/lib/vue3-quill.css";
 
 import "../../assets/sass/apps/mailbox.scss";
 
-import {useMeta} from "../../composables/use-meta";
+import {useMeta} from "@/Composables/use-meta";
 
 useMeta({ title: "Mailbox" });
 

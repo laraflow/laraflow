@@ -470,7 +470,7 @@ import "../../assets/sass/apps/todolist.scss";
 
 import "../../assets/sass/components/custom-modal.scss";
 
-import {useMeta} from "../../composables/use-meta";
+import {useMeta} from "@/Composables/use-meta";
 
 useMeta({ title: "Todo List" });
 

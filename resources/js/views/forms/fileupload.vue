@@ -164,7 +164,7 @@ import "../../assets/sass/forms/file-upload-with-preview.min.css";
 import highlight from "../../components/plugins/highlight.vue";
 import FileUploadWithPreview from "file-upload-with-preview";
 
-import {useMeta} from "../../composables/use-meta";
+import {useMeta} from "@/Composables/use-meta";
 
 useMeta({ title: "File Upload" });
 

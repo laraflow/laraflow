@@ -447,7 +447,7 @@ import highlight from "../../components/plugins/highlight.vue";
 import "../../assets/sass/font-icons/fontawesome/css/regular.css";
 import "../../assets/sass/font-icons/fontawesome/css/fontawesome.css";
 
-import {useMeta} from "../../composables/use-meta";
+import {useMeta} from "@/Composables/use-meta";
 
 useMeta({ title: "Wizards" });
 

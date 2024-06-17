@@ -8,9 +8,11 @@
         "php": "^8.2",
         "diglactic/laravel-breadcrumbs": "^9.0",
         "inertiajs/inertia-laravel": "^1.0",
+        "laraflow/api-crud": "^0.5.0",
         "laravel/framework": "^11.9",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
+        "spatie/laravel-permission": "^6.7",
         "tightenco/ziggy": "^2.0"
     },
     "require-dev": {

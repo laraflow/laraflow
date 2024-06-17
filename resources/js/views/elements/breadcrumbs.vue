@@ -338,7 +338,7 @@
     import "../../assets/sass/elements/breadcrumb.scss";
     import highlight from "../../components/plugins/highlight.vue";
 
-    import { useMeta } from "../../composables/use-meta";
+    import { useMeta } from "@/Composables/use-meta";
     useMeta({ title: "Breadcrumbs" });
 
     const code_arr = ref([]);

@@ -286,7 +286,7 @@ import {onMounted, ref} from "vue";
 import "../../assets/sass/apps/scrumboard.scss";
 import {VueDraggableNext as draggable} from "vue-draggable-next";
 
-import {useMeta} from "../../composables/use-meta";
+import {useMeta} from "@/Composables/use-meta";
 
 useMeta({ title: "Scrum Task Board" });
 

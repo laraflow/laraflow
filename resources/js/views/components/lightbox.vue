@@ -91,7 +91,7 @@
 
     import "../../assets/sass/components/custom-lightbox.scss";
 
-    import { useMeta } from "../../composables/use-meta";
+    import { useMeta } from "@/Composables/use-meta";
     useMeta({ title: "Lightbox" });
 
     const code_arr = ref([]);

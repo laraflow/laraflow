@@ -127,7 +127,7 @@
 <script setup>
 import "../../assets/sass/pages/privacy/privacy.scss";
 
-import {useMeta} from "../../composables/use-meta";
+import {useMeta} from "@/Composables/use-meta";
 
 useMeta({ title: "Privacy Policy" });
 

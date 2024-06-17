@@ -75,7 +75,7 @@
 import {ref} from "vue";
 import "../../assets/sass/authentication/auth-boxed.scss";
 
-import {useMeta} from "../../composables/use-meta";
+import {useMeta} from "@/Composables/use-meta";
 
 useMeta({ title: "Login Boxed" });
 

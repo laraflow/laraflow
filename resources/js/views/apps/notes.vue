@@ -274,7 +274,7 @@
 import {onMounted, ref} from "vue";
 import "../../assets/sass/apps/notes.scss";
 
-import {useMeta} from "../../composables/use-meta";
+import {useMeta} from "@/Composables/use-meta";
 
 useMeta({ title: "Notes" });
 

@@ -1501,7 +1501,7 @@ mounted() {
     import highlight from "../components/plugins/highlight.vue";
     import feather from "feather-icons";
 
-    import { useMeta } from "../composables/use-meta";
+    import { useMeta } from "@/Composables/use-meta";
     useMeta({ title: "Font Icons" });
 
     const code_arr = ref([]);

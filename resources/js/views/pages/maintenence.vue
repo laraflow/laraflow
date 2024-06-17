@@ -23,7 +23,7 @@
 <script setup>
 import "../../assets/sass/pages/error/style-maintanence.scss";
 
-import {useMeta} from "../../composables/use-meta";
+import {useMeta} from "@/Composables/use-meta";
 
 useMeta({ title: "Maintenence" });
 </script>

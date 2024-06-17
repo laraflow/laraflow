@@ -218,7 +218,7 @@ import flatPickr from 'vue-flatpickr-component';
 import 'flatpickr/dist/flatpickr.css';
 import '../../assets/sass/forms/custom-flatpickr.css';
 
-import {useMeta} from '../../composables/use-meta';
+import {useMeta} from '@/Composables/use-meta';
 
 useMeta({ title: 'Fullcalendar Drag and Drop Event' });
 

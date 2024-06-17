@@ -890,7 +890,7 @@
     import "../../assets/sass/components/tabs-accordian/custom-accordions.scss";
     import highlight from "../../components/plugins/highlight.vue";
 
-    import { useMeta } from "../../composables/use-meta";
+    import { useMeta } from "@/Composables/use-meta";
     useMeta({ title: "Accordions" });
 
     const code_arr = ref([]);

@@ -91,7 +91,7 @@
 <script setup>
 import "../../assets/sass/authentication/auth.scss";
 
-import {useMeta} from "../../composables/use-meta";
+import {useMeta} from "@/Composables/use-meta";
 
 useMeta({ title: "Login Cover" });
 </script>

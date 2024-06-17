@@ -395,7 +395,7 @@
 import "../../assets/sass/scrollspyNav.scss";
 import "../../assets/sass/users/user-profile.scss";
 
-import {useMeta} from "../../composables/use-meta";
+import {useMeta} from "@/Composables/use-meta";
 
 useMeta({ title: "User Profile" });
 </script>

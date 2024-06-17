@@ -658,7 +658,7 @@ import "../../assets/sass/forms/custom-flatpickr.css";
 // nouislider
 import "../../assets/sass/forms/custom-nouiSlider.css";
 
-import {useMeta} from "../../composables/use-meta";
+import {useMeta} from "@/Composables/use-meta";
 
 useMeta({ title: "Date & Range Picker" });
 

@@ -89,7 +89,7 @@ import Vue3Datatable from '@bhplugin/vue3-datatable';
 import {useStore} from 'vuex';
 import ApexChart from 'vue3-apexcharts';
 
-import {useMeta} from '../../../composables/use-meta';
+import {useMeta} from '@/Composables/use-meta';
 
 useMeta({ title: 'Advance Table' });
     const store = useStore();

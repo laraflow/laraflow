@@ -26,7 +26,7 @@
 <script setup>
 import "../../assets/sass/pages/error/style-500.scss";
 
-import {useMeta} from "../../composables/use-meta";
+import {useMeta} from "@/Composables/use-meta";
 
 useMeta({ title: "Error 500" });
 </script>

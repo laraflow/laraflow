@@ -194,7 +194,7 @@
 import {onMounted, ref} from "vue";
 import "../../../assets/sass/elements/tooltip.scss";
 
-import {useMeta} from "../../../composables/use-meta";
+import {useMeta} from "@/Composables/use-meta";
 
 useMeta({ title: "Custom Table" });
     //table 1

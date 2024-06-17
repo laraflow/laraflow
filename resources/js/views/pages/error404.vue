@@ -25,7 +25,7 @@
 <script setup>
 import "../../assets/sass/pages/error/style-400.scss";
 
-import {useMeta} from "../../composables/use-meta";
+import {useMeta} from "@/Composables/use-meta";
 
 useMeta({ title: "Error 404" });
 </script>

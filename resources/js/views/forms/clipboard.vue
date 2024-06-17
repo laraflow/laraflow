@@ -344,7 +344,7 @@ import highlight from "../../components/plugins/highlight.vue";
 
 import useClipboard from "vue-clipboard3";
 
-import {useMeta} from "../../composables/use-meta";
+import {useMeta} from "@/Composables/use-meta";
 
 useMeta({ title: "Clipboard" });
 

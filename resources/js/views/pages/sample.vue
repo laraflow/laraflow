@@ -185,7 +185,7 @@
 <script setup>
 import {onMounted, ref} from "vue";
 
-import {useMeta} from "../../composables/use-meta";
+import {useMeta} from "@/Composables/use-meta";
 
 useMeta({ title: "Sample" });
 

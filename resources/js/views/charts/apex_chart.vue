@@ -385,7 +385,7 @@ import highlight from "../../components/plugins/highlight.vue";
 import apexchart from "vue3-apexcharts";
 import {useStore} from "vuex";
 
-import {useMeta} from "../../composables/use-meta";
+import {useMeta} from "@/Composables/use-meta";
 
 useMeta({ title: "Apex Chart" });
 

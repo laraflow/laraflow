@@ -1187,7 +1187,7 @@
     import "../../assets/sass/components/custom-media_object.scss";
     import highlight from "../../components/plugins/highlight.vue";
 
-    import { useMeta } from "../../composables/use-meta";
+    import { useMeta } from "@/Composables/use-meta";
     useMeta({ title: "Media Object" });
 
     const code_arr = ref([]);
