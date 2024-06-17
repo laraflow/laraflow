@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Password;
 use Illuminate\Validation\ValidationException;
 use Inertia\Response;
 
-class PasswordResetLinkController extends Controller
+class ForgotPasswordController extends Controller
 {
     /**
      * Display the password reset link request view.
@@ -47,4 +47,5 @@ class PasswordResetLinkController extends Controller
             'email' => [trans($status)],
         ]);
     }
+
 }

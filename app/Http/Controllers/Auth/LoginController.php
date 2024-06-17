@@ -11,12 +11,14 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Validation\ValidationException;
 use Inertia\Response;
 
-class AuthenticatedSessionController extends Controller
+class LoginController extends Controller
 {
     /**
      * Display the login view.
+     *
+     * @return Response
      */
-    public function create(): Response
+    public function login(): Response
     {
         return render('Auth/Login', [
             'canResetPassword' => Route::has('password.request'),
@@ -26,10 +28,13 @@ class AuthenticatedSessionController extends Controller
     }
 
     /**
-     * Handle an incoming authentication request.
+     * Handle an incoming login authentication request.
+     *
+     * @param LoginRequest $request
+     * @return RedirectResponse
      * @throws ValidationException
      */
-    public function store(LoginRequest $request): RedirectResponse
+    public function attempt(LoginRequest $request): RedirectResponse
     {
         $request->authenticate();
 
@@ -39,9 +44,12 @@ class AuthenticatedSessionController extends Controller
     }
 
     /**
-     * Destroy an authenticated session.
+     * Logout an authenticated session.
+     *
+     * @param Request $request
+     * @return RedirectResponse
      */
-    public function destroy(Request $request): RedirectResponse
+    public function logout(Request $request): RedirectResponse
     {
         Auth::guard('web')->logout();
 

@@ -12,13 +12,14 @@ $REQUEST_NAMESPACES$
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Controller;
+use Inertia\Response;
 
 /**
  * Class $CLASS$
  * @package $CLASS_NAMESPACE$
  *
  * @lrd:start
- * This class handle create, display, update, delete & restore
+ * This class handle create, preview, update, delete & restore
  * operation related to $RESOURCE$
  * @lrd:end
  *
@@ -26,16 +27,26 @@ use Illuminate\Routing\Controller;
 class $CLASS$ extends Controller
 {
     /**
-     * @lrd:start
-     * Return a listing of the *$RESOURCE$* resource as collection.
+     * Return a list view of the *$RESOURCE$* resource.
      *
-     * *```paginate=false``` returns all resource as list not pagination*
-     * @lrd:end
+     * @param $INDEX_REQUEST$ $request
+     * @return Response
+     */
+    public function index($INDEX_REQUEST$ $request): Response
+    {
+        $inputs = $request->validated();
+
+        return render('$RESOURCE$/Index', compact('inputs'));
+    }
+
+    /**
+     * Return a *$RESOURCE$* resource as collection or paginate.
+     * ```paginate=false``` returns all resource as collection
      *
      * @param $INDEX_REQUEST$ $request
      * @return $RESOURCE$Collection|JsonResponse
      */
-    public function index($INDEX_REQUEST$ $request): $RESOURCE$Collection|JsonResponse
+    public function search($INDEX_REQUEST$ $request): $RESOURCE$Collection|JsonResponse
     {
         try {
             $inputs = $request->validated();
@@ -58,9 +69,17 @@ class $CLASS$ extends Controller
     }
 
     /**
-     * @lrd:start
+     * Return a create view of *$RESOURCE$* resource.
+     *
+     * @return Response
+     */
+    public function create(): Response
+    {
+        return render('$RESOURCE$/Create');
+    }
+
+    /**
      * Create a new *$RESOURCE$* resource in storage.
-     * @lrd:end
      *
      * @param $STORE_REQUEST$ $request
      * @return JsonResponse
@@ -89,29 +108,33 @@ class $CLASS$ extends Controller
     }
 
     /**
-     * @lrd:start
-     * Return a specified *$RESOURCE$* resource found by id.
-     * @lrd:end
+     * Return a show view of *$RESOURCE$* resource found by id.
      *
      * @param $RESOURCE$ $$RESOURCE_VARIABLE$
-     * @return $RESOURCE$Resource|JsonResponse
+     * @return Response
      */
-    public function show($RESOURCE$ $$RESOURCE_VARIABLE$): $RESOURCE$Resource|JsonResponse
+    public function show($RESOURCE$ $$RESOURCE_VARIABLE$): Response
     {
-        try {
+        $$RESOURCE_VARIABLE$ = new $RESOURCE$Resource($$RESOURCE_VARIABLE$);
 
-            return new $RESOURCE$Resource($$RESOURCE_VARIABLE$);
-
-        } catch (Exception $exception) {
-
-            return response()->failed($exception->getMessage());
-        }
+        return render('$RESOURCE$/Show', compact('$RESOURCE_VARIABLE$'));
     }
 
     /**
-     * @lrd:start
+     * Return a edit page *$RESOURCE$* resource found by id.
+     *
+     * @param $RESOURCE$ $$RESOURCE_VARIABLE$
+     * @return Response
+     */
+    public function edit($RESOURCE$ $$RESOURCE_VARIABLE$): Response
+    {
+        $$RESOURCE_VARIABLE$ = new $RESOURCE$Resource($$RESOURCE_VARIABLE$);
+
+        return render('$RESOURCE$/Edit', compact('$RESOURCE_VARIABLE$'));
+    }
+
+    /**
      * Update a specified *$RESOURCE$* resource using id.
-     * @lrd:end
      *
      * @param $UPDATE_REQUEST$ $request
      * @param $RESOURCE$ $$RESOURCE_VARIABLE$
@@ -138,16 +161,13 @@ class $CLASS$ extends Controller
     }
 
     /**
-     * @lrd:start
      * Soft delete a specified *$RESOURCE$* resource using id.
-     * @lrd:end
      *
      * @param $RESOURCE$ $$RESOURCE_VARIABLE$
      * @return JsonResponse
-     * @throws ModelNotFoundException
      * @throws DeleteOperationException
      */
-    public function destroy($RESOURCE$ $$RESOURCE_VARIABLE$)
+    public function destroy($RESOURCE$ $$RESOURCE_VARIABLE$): JsonResponse
     {
         try {
 

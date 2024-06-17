@@ -11,12 +11,12 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Inertia\Response;
 
-class RegisteredUserController extends Controller
+class RegisterController extends Controller
 {
     /**
      * Display the registration view.
      */
-    public function create(): Response
+    public function register(): Response
     {
         return render('Auth/Register');
     }
@@ -26,7 +26,7 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(RegisterRequest $request): RedirectResponse
+    public function attempt(RegisterRequest $request): RedirectResponse
     {
         $user = User::create([
             'name' => $request->name,
