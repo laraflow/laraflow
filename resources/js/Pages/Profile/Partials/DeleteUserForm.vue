@@ -1,3 +1,4 @@
+<!--
 <script setup>
 import DangerButton from '@/Components/DangerButton.vue';
 import InputError from '@/Components/InputError.vue';
@@ -93,3 +94,4 @@ const closeModal = () => {
         </Modal>
     </section>
 </template>
+-->

@@ -1,3 +1,28 @@
+
+<script setup>
+import {onMounted, ref} from "vue";
+import {useStore} from "vuex";
+import {PerfectScrollbar} from "vue3-perfect-scrollbar";
+
+const store = useStore();
+const setTemplateStyle = () => {
+    store.commit("toggleDarkMode", store.state.dark_mode);
+};
+const setMenuStyle = () => {
+    store.commit("toggleMenuStyle", store.state.menu_style);
+};
+const setLayoutStyle = () => {
+    store.commit("toggleLayoutStyle", store.state.layout_style);
+};
+
+const isOpen = ref(null);
+
+onMounted(() => {
+    setTemplateStyle();
+    setMenuStyle();
+    setLayoutStyle();
+});
+</script>
 <template>
     <div>
         <div class="overlay-setting" :class="{ show: isOpen }" @click="isOpen = !isOpen"></div>
@@ -138,28 +163,3 @@
         </div>
     </div>
 </template>
-
-<script setup>
-import {onMounted, ref} from "vue";
-
-import {useStore} from "vuex";
-
-const store = useStore();
-const setTemplateStyle = () => {
-    store.commit("toggleDarkMode", store.state.dark_mode);
-};
-const setMenuStyle = () => {
-    store.commit("toggleMenuStyle", store.state.menu_style);
-};
-const setLayoutStyle = () => {
-    store.commit("toggleLayoutStyle", store.state.layout_style);
-};
-
-const isOpen = ref(null);
-
-onMounted(() => {
-    setTemplateStyle();
-    setMenuStyle();
-    setLayoutStyle();
-});
-</script>

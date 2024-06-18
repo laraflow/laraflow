@@ -1,6 +1,7 @@
 <script setup>
 import {computed, onMounted, ref} from "vue";
 import {v4 as uuid} from "uuid";
+import FormError from "@/Components/Form/FormError.vue";
 
 const props = defineProps({
     label: {
@@ -77,8 +78,6 @@ defineOptions({
             v-model="model"
             ref="input"
             v-bind="{...$attrs, class:null}"/>
-        <div class="invalid-feedback d-block text-danger" v-show="hasError">
-            {{ message }}
-        </div>
+        <FormError :message="message"/>
     </div>
 </template>

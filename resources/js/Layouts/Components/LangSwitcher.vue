@@ -2,6 +2,7 @@
 import {useStore} from 'vuex';
 import {onMounted, reactive, ref} from "vue";
 import {useI18n} from "vue-i18n";
+import {PerfectScrollbar} from "vue3-perfect-scrollbar";
 
 const i18n = reactive(useI18n());
 
@@ -24,13 +25,13 @@ onMounted(() => {
 
 <template>
     <div class="dropdown nav-item language-dropdown btn-group">
-        <a href="javascript:;" id="ddllang" data-bs-toggle="dropdown" aria-expanded="false"
+        <a href="javascript:void(0);" id="ddllang" data-bs-toggle="dropdown" aria-expanded="false"
            class="btn dropdown-toggle btn-icon-only nav-link">
             <img v-if="selectedLang" :src="`/assets/images/flags/${selectedLang.code}.png`"
                  class="flag-width" alt="flag"/>
         </a>
         <ul class="dropdown-menu" aria-labelledby="ddllang">
-            <perfect-scrollbar>
+            <PerfectScrollbar>
                 <li v-for="item in countryList" :key="item.code">
                     <a href="javascript:;" class="dropdown-item d-flex align-items-center"
                        :class="{ active: i18n.locale === item.code }"
@@ -39,7 +40,7 @@ onMounted(() => {
                         <span>{{ item.name }}</span>
                     </a>
                 </li>
-            </perfect-scrollbar>
+            </PerfectScrollbar>
         </ul>
     </div>
 </template>

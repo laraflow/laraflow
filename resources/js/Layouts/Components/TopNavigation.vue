@@ -51,7 +51,7 @@ import {Link} from "@inertiajs/vue3";
             </li>
 
             <li class="menu single-menu">
-                <a href="javascript:;" class="dropdown-toggle">
+                <a href="javascript:void(0);" class="dropdown-toggle">
                     <div class="">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"

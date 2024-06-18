@@ -2,6 +2,7 @@
 import {computed, onMounted, ref} from "vue";
 import {Link} from '@inertiajs/vue3';
 import {v4 as uuid} from 'uuid';
+import FormError from "@/Components/Form/FormError.vue";
 
 const pwd_type = ref("password");
 
@@ -117,8 +118,6 @@ const togglePasswordType = () => {
             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
             <circle cx="12" cy="12" r="3"></circle>
         </svg>
-        <div class="invalid-feedback d-block text-danger" v-show="hasError">
-            {{ message }}
-        </div>
+        <FormError :message="message"/>
     </div>
 </template>

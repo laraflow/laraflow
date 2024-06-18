@@ -226,34 +226,6 @@ useMeta({ title: "Custom Table" });
         resizableColumns: false,
     });
 
-    //table 2
-    const columns1 = ref(["id", "profile", "name", "email", "phone", "status", "actions"]);
-    const items1 = ref([]);
-    const table_option1 = ref({
-        headings: {
-            id: (h, row, index) => {
-                return "#";
-            },
-        },
-        perPage: 5,
-        perPageValues: [5, 10, 20, 50],
-        skin: "table table-hover",
-        columnsClasses: { actions: "actions text-center" },
-        sortable: ["name", "email", "phone"],
-        sortIcon: {
-            base: "sort-icon-none",
-            up: "sort-icon-asc",
-            down: "sort-icon-desc",
-        },
-        pagination: { nav: "scroll", chunk: 5 },
-        texts: {
-            count: "Showing {from} to {to} of {count}",
-            filter: "",
-            filterPlaceholder: "Search...",
-            limit: "Results:",
-        },
-        resizableColumns: false,
-    });
 
     //table 3
     const columns2 = ref(["id", "profile", "first_name", "last_name", "email", "phone", "status", "actions"]);

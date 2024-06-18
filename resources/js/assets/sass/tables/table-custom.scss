@@ -188,7 +188,7 @@
                         }
 
                         .page-link {
-                            border-radius: 100%;
+                            border-radius: 0.25rem;
                             padding: 8px 14px;
                             background-color: $m-color_3;
                             font-weight: 600;
@@ -299,9 +299,9 @@
 }
 
 
-// // vue3-datatable 
-.vue3-datatable 
-{    
+// // vue3-datatable
+.vue3-datatable
+{
     .form-group {
         padding: 16px 26px 0px ;
 
@@ -340,11 +340,11 @@
         padding: 16px 16px;
     }
 
-    .bh-pagination 
-    { 
+    .bh-pagination
+    {
         .bh-page-item {
             background-color: #e0e6ed;
-            border-width: 0px !important; 
+            border-width: 0px !important;
             color:#3b3f5c;
             width: 38px;
             height: 38px;
@@ -373,8 +373,8 @@
     }
 
     .alt-pagination,.next-prev-pagination {
-        .bh-pagination 
-        { 
+        .bh-pagination
+        {
             .bh-page-item {
                 min-width: max-content;
                 border-radius: 4px;
@@ -383,8 +383,8 @@
     }
 
     .next-prev-pagination {
-        .bh-pagination 
-        { 
+        .bh-pagination
+        {
             >div {
                 flex-direction: column;
             }

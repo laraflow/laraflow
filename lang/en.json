@@ -49,5 +49,9 @@
     "reset_password_form_subtitle": "Forgot your password? No problem. Just let us know your email address and we will email you a password reset\n            link that will allow you to choose a new one.",
     "reset_password_btn": "Reset Password",
     "new_password": "New Password",
-    "new_password_confirm": "Confirm New Password"
+    "new_password_confirm": "Confirm New Password",
+    "teams": "Teams",
+    "roles": "Roles",
+    "permissions": "Permissions",
+    "home" :  "Home"
 }

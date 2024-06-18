@@ -1,8 +1,6 @@
 <script setup>
-import {Link} from "@inertiajs/vue3";
 import {useStore} from 'vuex';
 import Logo from "@/Layouts/Components/Logo.vue";
-import ModeSwitcher from "@/Layouts/Components/ModeSwitcher.vue";
 import LangSwitcher from "@/Layouts/Components/LangSwitcher.vue";
 import UserDropDown from "@/Layouts/Components/UserDropDown.vue";
 import NotificationDropDown from "@/Layouts/Components/NotificationDropDown.vue";

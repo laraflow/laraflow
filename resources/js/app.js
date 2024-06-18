@@ -15,7 +15,6 @@ window.bootstrap = bootstrap;
 import "./assets/sass/components/custom-modal.scss";
 
 // perfect scrollbar
-import PerfectScrollbar from "vue3-perfect-scrollbar";
 import "vue3-perfect-scrollbar/dist/vue3-perfect-scrollbar.css";
 
 //Sweetalert
@@ -43,17 +42,14 @@ import {ClientTable} from "v-tables-3";
 import vue3JsonExcel from "vue3-json-excel";
 
 //vue-wizard
-import VueFormWizard from "vue3-form-wizard";
-import "vue3-form-wizard/dist/style.css";
+// import VueFormWizard from "vue3-form-wizard";
+// import "vue3-form-wizard/dist/style.css";
 
 // set default settings
 import appSetting from "./app-setting";
 
 window.$appSetting = appSetting;
 
-//markdown editor
-import VueEasymde from 'vue3-easymde';
-import "easymde/dist/easymde.min.css";
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
@@ -66,13 +62,11 @@ createInertiaApp({
             .use(ZiggyVue)
             .use(store)
             .use(i18n)
-            .use(PerfectScrollbar)
             .use(VueNouislider)
             .use(Maska)
             .use(ClientTable)
-            .use(vue3JsonExcel)
-            .use(VueFormWizard)
-            .use(VueEasymde);
+            // .use(ServerTable)
+            .use(vue3JsonExcel);
 
         registerScrollSpy(vueApp, {offset: 118});
 
