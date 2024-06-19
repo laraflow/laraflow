@@ -37,6 +37,7 @@
     "login_form_title": "Log In",
     "login_form_subtitle": "Log in to your account to continue.",
     "login_btn": "Log In",
+    "logout_btn": "Log Out",
     "register_prompt": "Not registered ?",
     "register_prompt_link": "Create an account",
     "register_form_title": "Register",

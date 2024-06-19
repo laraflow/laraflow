@@ -1957,15 +1957,16 @@
 </template>
 
 <script setup>
-    import { computed, ref } from "vue";
+import {computed, ref} from "vue";
 
-    import apexchart from "vue3-apexcharts";
-    import "../assets/sass/widgets/widgets.scss";
+import apexchart from "vue3-apexcharts";
+import "../assets/sass/widgets/widgets.scss";
 
-    import { useStore } from "vuex";
+import {useStore} from "vuex";
 
-    import { useMeta } from "@/Composables/use-meta";
-    useMeta({ title: "Widgets" });
+import {useMeta} from "@/Composables/use-meta";
+
+useMeta({ title: "Widgets" });
 
     const store = useStore();
 

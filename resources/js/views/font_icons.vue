@@ -1493,16 +1493,17 @@ mounted() {
 </style>
 
 <script setup>
-    import { onMounted, ref } from "vue";
+import {onMounted, ref} from "vue";
 
-    import "../assets/sass/scrollspyNav.scss";
-    import "../assets/sass/font-icons/fontawesome/css/regular.css";
-    import "../assets/sass/font-icons/fontawesome/css/fontawesome.css";
-    import highlight from "../components/plugins/highlight.vue";
-    import feather from "feather-icons";
+import "../assets/sass/scrollspyNav.scss";
+import "../assets/sass/font-icons/fontawesome/css/regular.css";
+import "../assets/sass/font-icons/fontawesome/css/fontawesome.css";
+import highlight from "../components/plugins/highlight.vue";
+import feather from "feather-icons";
 
-    import { useMeta } from "@/Composables/use-meta";
-    useMeta({ title: "Font Icons" });
+import {useMeta} from "@/Composables/use-meta";
+
+useMeta({ title: "Font Icons" });
 
     const code_arr = ref([]);
 

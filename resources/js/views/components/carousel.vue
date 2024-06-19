@@ -575,13 +575,14 @@
 </template>
 
 <script setup>
-    import { ref } from "vue";
-    import "../../assets/sass/scrollspyNav.scss";
-    import "../../assets/sass/components/custom-carousel.scss";
-    import highlight from "../../components/plugins/highlight.vue";
+import {ref} from "vue";
+import "../../assets/sass/scrollspyNav.scss";
+import "../../assets/sass/components/custom-carousel.scss";
+import highlight from "../../components/plugins/highlight.vue";
 
-    import { useMeta } from "@/Composables/use-meta";
-    useMeta({ title: "Carousel" });
+import {useMeta} from "@/Composables/use-meta";
+
+useMeta({ title: "Carousel" });
 
     const code_arr = ref([]);
     const slide1 = ref(0);

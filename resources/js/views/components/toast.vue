@@ -713,12 +713,13 @@
 </template>
 
 <script setup>
-    import { onMounted, ref } from "vue";
-    import "../../assets/sass/scrollspyNav.scss";
-    import highlight from "../../components/plugins/highlight.vue";
+import {onMounted, ref} from "vue";
+import "../../assets/sass/scrollspyNav.scss";
+import highlight from "../../components/plugins/highlight.vue";
 
-    import { useMeta } from "@/Composables/use-meta";
-    useMeta({ title: "Notifications" });
+import {useMeta} from "@/Composables/use-meta";
+
+useMeta({ title: "Notifications" });
 
     const code_arr = ref([]);
     let toastBasic = ref(null);

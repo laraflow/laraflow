@@ -1,5 +1,4 @@
 <script setup>
-import GuestLayout from '@/Layouts/GuestLayout.vue';
 import {Head, useForm} from '@inertiajs/vue3';
 import EmailInput from "@/Pages/Auth/Components/EmailInput.vue";
 import PrimaryButton from "@/Pages/Auth/Components/PrimaryButton.vue";
@@ -31,7 +30,6 @@ const submit = () => {
 </script>
 
 <template>
-    <GuestLayout>
         <Head :title="$t('forgot_password_form_title')"/>
         <h1>{{ $t('forgot_password_form_title') }}</h1>
         <p class="mb-1">
@@ -50,5 +48,4 @@ const submit = () => {
                 <PrimaryButton :label="$t('forgot_password_btn')"  :processing="form.processing"/>
             </div>
         </form>
-    </GuestLayout>
 </template>

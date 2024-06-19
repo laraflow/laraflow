@@ -1182,13 +1182,14 @@
 </template>
 
 <script setup>
-    import { ref } from "vue";
-    import "../../assets/sass/scrollspyNav.scss";
-    import "../../assets/sass/components/custom-media_object.scss";
-    import highlight from "../../components/plugins/highlight.vue";
+import {ref} from "vue";
+import "../../assets/sass/scrollspyNav.scss";
+import "../../assets/sass/components/custom-media_object.scss";
+import highlight from "../../components/plugins/highlight.vue";
 
-    import { useMeta } from "@/Composables/use-meta";
-    useMeta({ title: "Media Object" });
+import {useMeta} from "@/Composables/use-meta";
+
+useMeta({ title: "Media Object" });
 
     const code_arr = ref([]);
     const chk_demo = ref(["checkbox-1"]);

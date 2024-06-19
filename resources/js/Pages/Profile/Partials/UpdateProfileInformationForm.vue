@@ -1,6 +1,5 @@
-<!--
 <script setup>
-import InputError from '@/Components/InputError.vue';
+/*import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
@@ -20,12 +19,12 @@ const user = usePage().props.auth.user;
 const form = useForm({
     name: user.name,
     email: user.email,
-});
+});*/
 </script>
 
 <template>
     <section>
-        <header>
+<!--        <header>
             <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">Profile Information</h2>
 
             <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
@@ -98,7 +97,7 @@ const form = useForm({
                     <p v-if="form.recentlySuccessful" class="text-sm text-gray-600 dark:text-gray-400">Saved.</p>
                 </Transition>
             </div>
-        </form>
+        </form>-->
     </section>
 </template>
 -->

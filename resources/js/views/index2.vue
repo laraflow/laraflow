@@ -884,13 +884,14 @@
     </div>
 </template>
 <script setup>
-    import "../assets/sass/widgets/widgets.scss";
-    import { computed, ref } from "vue";
-    import { useStore } from "vuex";
-    import ApexChart from "vue3-apexcharts";
+import "../assets/sass/widgets/widgets.scss";
+import {computed, ref} from "vue";
+import {useStore} from "vuex";
+import ApexChart from "vue3-apexcharts";
 
-    import { useMeta } from "@/Composables/use-meta";
-    useMeta({ title: "Widgets" });
+import {useMeta} from "@/Composables/use-meta";
+
+useMeta({ title: "Widgets" });
 
     const store = useStore();
 

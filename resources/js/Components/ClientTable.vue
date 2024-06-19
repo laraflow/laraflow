@@ -5,6 +5,21 @@ import {onMounted, ref, useSlots} from "vue";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 
+const props = defineProps({
+    columns: {
+        type: Array,
+        required: true,
+    },
+    options: {
+        type: Object,
+        required: false,
+        default: {}
+    },
+    items: {
+        type: Array,
+    }
+})
+
 const tableOptions = ref({
     perPage: 5,
     perPageValues: [5, 10, 20, 50, 100, 200, 500],
@@ -167,7 +182,7 @@ defineOptions({
         <div class="col-xl-12 col-lg-12 col-sm-12 layout-spacing">
             <div class="panel p-0" style="min-height: 70vh !important;">
                 <div class="custom-table">
-                    <v-server-table v-bind="{...$attrs, $slots}">
+                    <v-client-table :data="items" :columns="columns" :options="tableOptions" v-bind="slots">
                         <template #beforeFilter>
                             <div class="d-flex flex-wrap justify-content-center justify-content-sm-start gap-2 pb-0">
                                 <div class="custom-dropdown dropdown btn-group">
@@ -242,7 +257,7 @@ defineOptions({
                                 </div>
                             </div>
                         </template>
-                    </v-server-table>
+                    </v-client-table>
                 </div>
             </div>
         </div>

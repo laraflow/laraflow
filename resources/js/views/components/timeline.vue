@@ -743,13 +743,14 @@
 </template>
 
 <script setup>
-    import { ref } from "vue";
-    import "../../assets/sass/scrollspyNav.scss";
-    import "../../assets/sass/components/timeline/custom-timeline.scss";
-    import highlight from "../../components/plugins/highlight.vue";
+import {ref} from "vue";
+import "../../assets/sass/scrollspyNav.scss";
+import "../../assets/sass/components/timeline/custom-timeline.scss";
+import highlight from "../../components/plugins/highlight.vue";
 
-    import { useMeta } from "@/Composables/use-meta";
-    useMeta({ title: "Timeline" });
+import {useMeta} from "@/Composables/use-meta";
+
+useMeta({ title: "Timeline" });
 
     const code_arr = ref([]);
     const toggleCode = (name) => {

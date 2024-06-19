@@ -1,5 +1,4 @@
 <script setup>
-import GuestLayout from '@/Layouts/GuestLayout.vue';
 import {Head, Link, useForm} from '@inertiajs/vue3';
 import NameInput from "@/Pages/Auth/Components/NameInput.vue";
 import EmailInput from "@/Pages/Auth/Components/EmailInput.vue";
@@ -50,67 +49,65 @@ const submit = () => {
 </script>
 
 <template>
-    <GuestLayout>
-        <Head :title="$t('register_form_title')"/>
-        <h1>{{ $t('register_form_title') }}</h1>
-        <p class="signup-link register mb-1">
-            {{ $t('register_form_subtitle') }}
-            <Link :href="route('login')">{{ $t('login_btn') }}</Link>
-        </p>
-        <form class="text-start" @submit.prevent="submit">
-            <div class="form">
-                <NameInput
-                    autofocus
-                    tabindex="1"
-                    :label="$t('name')"
-                    name="name"
-                    :placeholder="$t('name_placeholder')"
-                    v-model="form.name"
-                    :message="form.errors.name"
-                />
+    <Head :title="$t('register_form_title')"/>
+    <h1>{{ $t('register_form_title') }}</h1>
+    <p class="signup-link register mb-1">
+        {{ $t('register_form_subtitle') }}
+        <Link :href="route('login')">{{ $t('login_btn') }}</Link>
+    </p>
+    <form class="text-start" @submit.prevent="submit">
+        <div class="form">
+            <NameInput
+                autofocus
+                tabindex="1"
+                :label="$t('name')"
+                name="name"
+                :placeholder="$t('name_placeholder')"
+                v-model="form.name"
+                :message="form.errors.name"
+            />
 
-                <EmailInput
-                    tabindex="2"
-                    :label="$t('email')"
-                    name="email"
-                    :placeholder="$t('email_placeholder')"
-                    v-model="form.email"
-                    :message="form.errors.email"
-                />
+            <EmailInput
+                tabindex="2"
+                :label="$t('email')"
+                name="email"
+                :placeholder="$t('email_placeholder')"
+                v-model="form.email"
+                :message="form.errors.email"
+            />
 
-                <PasswordInput
-                    tabindex="3"
-                    :label="$t('password')"
-                    v-model="form.password"
-                    :message="form.errors.password"
-                    :can-reset-password="false"
-                />
+            <PasswordInput
+                tabindex="3"
+                :label="$t('password')"
+                v-model="form.password"
+                :message="form.errors.password"
+                :can-reset-password="false"
+            />
 
-                <PasswordInput
-                    tabindex="4"
-                    :label="$t('confirm_password')"
-                    v-model="form.password_confirmation"
-                    :message="form.errors.password"
-                    :can-reset-password="false"
-                />
+            <PasswordInput
+                tabindex="4"
+                :label="$t('confirm_password')"
+                v-model="form.password_confirmation"
+                :message="form.errors.password"
+                :can-reset-password="false"
+            />
 
-                <div class="terms_condition">
-                    <BooleanInput
-                        tabindex="5"
-                        :label="''"
-                        v-model="form.accept_terms"
-                        :message="form.errors.accept_terms"
-                    >
-                        I agree to the
-                        <Link href="#"> terms
-                            and conditions
-                        </Link>
-                        .
-                    </BooleanInput>
-                </div>
-
-                <PrimaryButton :label="$t('register_btn')"  :processing="form.processing"/>
+            <div class="terms_condition">
+                <BooleanInput
+                    tabindex="5"
+                    :label="''"
+                    v-model="form.accept_terms"
+                    :message="form.errors.accept_terms"
+                >
+                    I agree to the
+                    <Link href="#"> terms
+                        and conditions
+                    </Link>
+                    .
+                </BooleanInput>
             </div>
-        </form>
-    </GuestLayout>
+
+            <PrimaryButton :label="$t('register_btn')" :processing="form.processing"/>
+        </div>
+    </form>
 </template>

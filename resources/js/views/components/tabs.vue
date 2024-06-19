@@ -3893,13 +3893,14 @@
 </template>
 
 <script setup>
-    import { ref } from "vue";
-    import "../../assets/sass/scrollspyNav.scss";
-    import "../../assets/sass/components/tabs-accordian/custom-tabs.scss";
-    import highlight from "../../components/plugins/highlight.vue";
+import {ref} from "vue";
+import "../../assets/sass/scrollspyNav.scss";
+import "../../assets/sass/components/tabs-accordian/custom-tabs.scss";
+import highlight from "../../components/plugins/highlight.vue";
 
-    import { useMeta } from "@/Composables/use-meta";
-    useMeta({ title: "Tabs" });
+import {useMeta} from "@/Composables/use-meta";
+
+useMeta({ title: "Tabs" });
 
     const code_arr = ref([]);
     const toggleCode = (name) => {

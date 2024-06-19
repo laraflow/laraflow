@@ -188,13 +188,14 @@
 </template>
 
 <script setup>
-    import { onMounted, onUnmounted, ref } from "vue";
-    import "../../assets/sass/scrollspyNav.scss";
-    import "../../assets/sass/components/custom-countdown.scss";
-    import highlight from "../../components/plugins/highlight.vue";
+import {onMounted, onUnmounted, ref} from "vue";
+import "../../assets/sass/scrollspyNav.scss";
+import "../../assets/sass/components/custom-countdown.scss";
+import highlight from "../../components/plugins/highlight.vue";
 
-    import { useMeta } from "@/Composables/use-meta";
-    useMeta({ title: "Countdown" });
+import {useMeta} from "@/Composables/use-meta";
+
+useMeta({ title: "Countdown" });
 
     const code_arr = ref([]);
     const timer1 = ref(null);

@@ -1,6 +1,5 @@
-<!--
 <script setup>
-import InputError from '@/Components/InputError.vue';
+/*import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
@@ -31,12 +30,12 @@ const updatePassword = () => {
             }
         },
     });
-};
+};*/
 </script>
 
 <template>
     <section>
-        <header>
+<!--        <header>
             <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">Update Password</h2>
 
             <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
@@ -101,7 +100,7 @@ const updatePassword = () => {
                     <p v-if="form.recentlySuccessful" class="text-sm text-gray-600 dark:text-gray-400">Saved.</p>
                 </Transition>
             </div>
-        </form>
+        </form>-->
     </section>
 </template>
--->
+

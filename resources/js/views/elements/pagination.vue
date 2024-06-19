@@ -768,12 +768,13 @@
 </template>
 
 <script setup>
-    import { ref } from "vue";
-    import "../../assets/sass/scrollspyNav.scss";
-    import highlight from "../../components/plugins/highlight.vue";
+import {ref} from "vue";
+import "../../assets/sass/scrollspyNav.scss";
+import highlight from "../../components/plugins/highlight.vue";
 
-    import { useMeta } from "@/Composables/use-meta";
-    useMeta({ title: "Pagination" });
+import {useMeta} from "@/Composables/use-meta";
+
+useMeta({ title: "Pagination" });
 
     const code_arr = ref([]);
     const rows = ref(9);

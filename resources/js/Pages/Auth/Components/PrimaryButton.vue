@@ -1,5 +1,4 @@
 <script setup>
-import {computed, ref} from "vue";
 
 defineProps({
     label: {

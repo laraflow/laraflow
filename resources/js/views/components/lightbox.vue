@@ -86,13 +86,14 @@
 </template>
 
 <script setup>
-    import { onMounted, ref } from "vue";
-    import VueEasyLightbox from "vue-easy-lightbox";
+import {onMounted, ref} from "vue";
+import VueEasyLightbox from "vue-easy-lightbox";
 
-    import "../../assets/sass/components/custom-lightbox.scss";
+import "../../assets/sass/components/custom-lightbox.scss";
 
-    import { useMeta } from "@/Composables/use-meta";
-    useMeta({ title: "Lightbox" });
+import {useMeta} from "@/Composables/use-meta";
+
+useMeta({ title: "Lightbox" });
 
     const code_arr = ref([]);
     const index = ref(null);

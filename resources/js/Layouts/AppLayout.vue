@@ -1,12 +1,11 @@
 <script setup>
 import {useStore} from "vuex";
-
-const store = useStore();
-
 import Footer from "@/Layouts/Components/Footer.vue";
 import Header from "@/Layouts/Components/Header.vue";
 import Setting from "@/Layouts/Components/Setting.vue";
 import Sidebar from "@/Layouts/Components/Sidebar.vue";
+
+const store = useStore();
 </script>
 
 <template>

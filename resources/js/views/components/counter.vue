@@ -324,15 +324,16 @@
     </div>
 </template>
 <script setup>
-    import { ref } from 'vue';
-    import CountUp from 'vue-countup-v3';
+import {ref} from 'vue';
+import CountUp from 'vue-countup-v3';
 
-    import '../../assets/sass/scrollspyNav.scss';
-    import '../../assets/sass/components/custom-counter.scss';
-    import highlight from '../../components/plugins/highlight.vue';
+import '../../assets/sass/scrollspyNav.scss';
+import '../../assets/sass/components/custom-counter.scss';
+import highlight from '../../components/plugins/highlight.vue';
 
-    import { useMeta } from '@/Composables/use-meta';
-    useMeta({ title: 'Counter' });
+import {useMeta} from '@/Composables/use-meta';
+
+useMeta({ title: 'Counter' });
 
     const code_arr = ref([]);
     const toggleCode = (name) => {
