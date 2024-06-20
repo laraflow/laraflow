@@ -5,6 +5,7 @@ import EmailInput from "@/Pages/Auth/Components/EmailInput.vue";
 import PasswordInput from "@/Pages/Auth/Components/PasswordInput.vue";
 import PrimaryButton from "@/Pages/Auth/Components/PrimaryButton.vue";
 import BooleanInput from "@/Pages/Auth/Components/BooleanInput.vue";
+import GuestLayout from "@/Layouts/GuestLayout.vue";
 
 const form = useForm({
     name: '',
@@ -49,6 +50,7 @@ const submit = () => {
 </script>
 
 <template>
+    <GuestLayout>
     <Head :title="$t('register_form_title')"/>
     <h1>{{ $t('register_form_title') }}</h1>
     <p class="signup-link register mb-1">
@@ -110,4 +112,5 @@ const submit = () => {
             <PrimaryButton :label="$t('register_btn')" :processing="form.processing"/>
         </div>
     </form>
+    </GuestLayout>
 </template>

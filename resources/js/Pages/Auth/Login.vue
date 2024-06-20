@@ -4,6 +4,7 @@ import PasswordInput from "@/Pages/Auth/Components/PasswordInput.vue";
 import EmailInput from "@/Pages/Auth/Components/EmailInput.vue";
 import PrimaryButton from "@/Pages/Auth/Components/PrimaryButton.vue";
 import BooleanInput from "@/Pages/Auth/Components/BooleanInput.vue";
+import GuestLayout from "@/Layouts/GuestLayout.vue";
 
 defineProps({
     canResetPassword: {
@@ -50,6 +51,7 @@ const submit = () => {
 </script>
 
 <template>
+    <GuestLayout>
     <Head :title="$t('login_form_title')"/>
     <h1>{{ $t('login_form_title') }}</h1>
     <p class="mb-1">{{ $t('login_form_subtitle') }}</p>
@@ -90,4 +92,5 @@ const submit = () => {
             </p>
         </div>
     </form>
+    </GuestLayout>
 </template>

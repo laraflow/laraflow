@@ -1,4 +1,5 @@
 <script setup>
+import {ref} from "vue";
 import {useStore} from 'vuex';
 import Logo from "@/Layouts/Components/Logo.vue";
 import LangSwitcher from "@/Layouts/Components/LangSwitcher.vue";
@@ -6,8 +7,9 @@ import UserDropDown from "@/Layouts/Components/UserDropDown.vue";
 import NotificationDropDown from "@/Layouts/Components/NotificationDropDown.vue";
 import TopNavigation from "@/Layouts/Components/TopNavigation.vue";
 import Breadcrumbs from "@/Layouts/Components/Breadcrumbs.vue";
-const store = useStore();
 
+const store = useStore();
+const input = ref(null);
 </script>
 
 <template>
@@ -59,7 +61,7 @@ const store = useStore();
                               :class="{ 'input-focused': $store.state.is_show_search }">
                             <div class="search-bar">
                                 <input type="text" class="form-control search-form-control ms-lg-auto"
-                                       placeholder="Search..."/>
+                                       placeholder="Search..." ref="search"/>
                             </div>
                         </form>
                     </li>

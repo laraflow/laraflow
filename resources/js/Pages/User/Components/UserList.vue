@@ -1,6 +1,7 @@
 <script setup>
 import {onMounted, ref} from "vue";
 import {useTable} from "@/Composables/table.js"
+import AddLinkButton from "@/Components/AddLinkButton.vue";
 
 const columns = ref(['id', 'name', 'email', 'created_at', 'updated_at', 'actions'])
 
@@ -85,6 +86,9 @@ const excelColumns = () => {
                     <v-server-table :url="route('users.search')" :columns="columns" :options="options">
                         <template #beforeFilter>
                             <div class="d-flex flex-wrap justify-content-center justify-content-sm-start gap-2 pb-0">
+                                <AddLinkButton :url="route('users.create')">
+                                    {{ $t("add_user_btn") }}
+                                </AddLinkButton>
                                 <div class="custom-dropdown dropdown btn-group">
                                     <a class="btn dropdown-toggle btn-icon-only" href="#" role="button" id="pendingTask"
                                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -159,7 +163,6 @@ const excelColumns = () => {
                         </template>
                         <template #id="props">
                             <div class="checkbox-outline-primary custom-control custom-checkbox">
-                                {{ props.row.id }}
                                 <input variant="primary" type="checkbox" class="custom-control-input"
                                        :id="props.row.id"/>
                                 <label class="custom-control-label" :for="props.row.id"></label>

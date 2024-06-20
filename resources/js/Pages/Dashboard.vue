@@ -1,13 +1,10 @@
 <script setup>
 import {Head} from '@inertiajs/vue3';
 import AppLayout from "@/Layouts/AppLayout.vue";
-
-defineOptions({
-    layout: AppLayout
-})
 </script>
 
 <template>
+    <AppLayout>
     <Head :title="$t('dashboard')"/>
         <div class="layout-px-spacing">
             <div class="row layout-top-spacing">
@@ -26,6 +23,7 @@ defineOptions({
                 </div>
             </div>
         </div>
+    </AppLayout>
 </template>
 
 <style scoped>

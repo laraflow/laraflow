@@ -54,5 +54,6 @@
     "teams": "Teams",
     "roles": "Roles",
     "permissions": "Permissions",
-    "home" :  "Home"
+    "home": "Home",
+    "add_user_btn": "Add User"
 }

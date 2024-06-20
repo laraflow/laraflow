@@ -4,8 +4,8 @@ import AppLayout from "@/Layouts/AppLayout.vue";
 </script>
 
 <template>
-    <Head :title="$t('dashboard')"/>
     <AppLayout>
+        <Head :title="$t('dashboard')"/>
         <div class="layout-px-spacing">
             <div class="row layout-top-spacing">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-12 layout-spacing">

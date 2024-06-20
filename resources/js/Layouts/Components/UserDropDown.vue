@@ -7,7 +7,7 @@ const form = useForm({});
 
 const submit = () => {
     form.post(route('logout'), {
-        onSuccess: () => router.replace(route('login')),
+        onSuccess: () => window.location.reload(),
     });
 };
 </script>

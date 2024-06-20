@@ -5,8 +5,6 @@ import {createInertiaApp} from '@inertiajs/vue3';
 import {ZiggyVue} from '../../vendor/tightenco/ziggy';
 import store from "./store";
 import i18n from "./i18n";
-import AppLayout from "@/Layouts/AppLayout.vue";
-import GuestLayout from "@/Layouts/GuestLayout.vue";
 import * as bootstrap from "bootstrap";
 import "./assets/sass/components/custom-modal.scss";
 import "vue3-perfect-scrollbar/dist/vue3-perfect-scrollbar.css";
@@ -20,6 +18,7 @@ import {ServerTable} from "v-tables-3";
 // import "vue3-form-wizard/dist/style.css";
 // set default settings
 import appSetting from "./app-setting";
+import {resolvePageComponent} from "laravel-vite-plugin/inertia-helpers";
 
 window.bootstrap = bootstrap;
 window.Swal = Swal;
@@ -31,12 +30,7 @@ const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 createInertiaApp({
     title: (title) => `${title ?? 'Index'} - ${appName}`,
     resolve: (name) => {
-        const pages = import.meta.glob('./Pages/**/*.vue', {eager: true});
-        let page = pages[`./Pages/${name}.vue`]
-        if (!page.default.layout) {
-            page.default.layout = window?.authenticated === 'app' ? AppLayout : GuestLayout
-        }
-        return page;
+        return resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue'));
     },
     setup({el, App, props, plugin}) {
         const vueApp = createApp({render: () => h(App, props)})
