@@ -326,18 +326,25 @@ body {
     }
 
     @media (max-width: 575px) {
-        .form-form .form-form-wrap form {
-            .field-wrapper.toggle-pass {
-                margin-bottom: 28px;
+        .form-form .form-form-wrap {
+            .form-container .form-content {
+                margin: 0 auto !important;
+                width: calc(100% - 32px);
             }
 
-            .social a {
-                &.social-fb,
-                &.social-github {
-                    margin-right: auto;
-                    margin-left: auto;
-                    margin-bottom: 10px;
-                    display: block;
+            form {
+                .field-wrapper.toggle-pass {
+                    margin-bottom: 28px;
+                }
+
+                .social a {
+                    &.social-fb,
+                    &.social-github {
+                        margin-right: auto;
+                        margin-left: auto;
+                        margin-bottom: 10px;
+                        display: block;
+                    }
                 }
             }
         }
