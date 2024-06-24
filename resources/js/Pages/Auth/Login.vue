@@ -20,12 +20,15 @@ defineProps({
     },
 });
 
+defineOptions({
+    layout: GuestLayout
+})
+
 const form = useForm({
     email: '',
     password: '',
     remember: false,
 });
-
 const validate = () => {
     form.clearErrors();
 
@@ -49,9 +52,7 @@ const submit = () => {
     });
 }
 </script>
-
 <template>
-    <GuestLayout>
     <Head :title="$t('login_form_title')"/>
     <h1>{{ $t('login_form_title') }}</h1>
     <p class="mb-1">{{ $t('login_form_subtitle') }}</p>
@@ -92,5 +93,4 @@ const submit = () => {
             </p>
         </div>
     </form>
-    </GuestLayout>
 </template>

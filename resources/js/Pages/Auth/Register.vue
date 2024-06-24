@@ -7,6 +7,9 @@ import PrimaryButton from "@/Pages/Auth/Components/PrimaryButton.vue";
 import BooleanInput from "@/Pages/Auth/Components/BooleanInput.vue";
 import GuestLayout from "@/Layouts/GuestLayout.vue";
 
+defineOptions({
+    layout: GuestLayout
+})
 const form = useForm({
     name: '',
     email: '',
@@ -14,7 +17,6 @@ const form = useForm({
     password_confirmation: '',
     accept_terms: false,
 });
-
 const validate = () => {
     form.clearErrors();
 
@@ -35,7 +37,6 @@ const validate = () => {
 
     return !form.hasErrors;
 }
-
 const submit = () => {
     form.post(route('register'), {
         preserveScroll: true,
@@ -50,7 +51,6 @@ const submit = () => {
 </script>
 
 <template>
-    <GuestLayout>
     <Head :title="$t('register_form_title')"/>
     <h1>{{ $t('register_form_title') }}</h1>
     <p class="signup-link register mb-1">
@@ -112,5 +112,4 @@ const submit = () => {
             <PrimaryButton :label="$t('register_btn')" :processing="form.processing"/>
         </div>
     </form>
-    </GuestLayout>
 </template>
