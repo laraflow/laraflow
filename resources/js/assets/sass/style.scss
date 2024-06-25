@@ -860,7 +860,7 @@
     font-weight: 400;
     line-height: 1;
     max-width: 100%;
-    max-height: auto;
+    max-height: inherit;
     text-align: center;
     overflow: visible;
     position: relative;
@@ -1573,8 +1573,8 @@
     }
 
     #content {
-        margin-top: 108px;
-        margin-left: 0px;
+        margin-top: 124px;
+        margin-left: 16px;
     }
 
     &.boxed-layout {
@@ -2045,7 +2045,8 @@
         }
 
         #content {
-            margin-top: 54px;
+            margin-top: 70px;
+            margin-left: 16px;
         }
     }
 }

@@ -1,6 +1,8 @@
 <script setup>
 import {Head} from '@inertiajs/vue3';
 import AppLayout from "@/Layouts/AppLayout.vue";
+import UserList from "@/Pages/User/Components/UserList.vue";
+import AddLinkButton from "@/Components/AddLinkButton.vue";
 </script>
 
 <template>
@@ -18,4 +20,21 @@ import AppLayout from "@/Layouts/AppLayout.vue";
             </div>
         </div>
     </AppLayout>
+        <div class="row mt-4 mx-2">
+            <div class="col-xl-12 col-lg-12 col-sm-12 layout-spacing">
+                <div class="panel" style="min-height: 70vh !important;">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Users</h3>
+                    </div>
+                    <div class="panel-body p-0">
+                        <div class="d-flex justify-content-between gap-3 mx-3">
+                            <AddLinkButton :url="route('users.create')">
+                                {{ $t("add_user_btn") }}
+                            </AddLinkButton>
+                        </div>
+                        <UserList/>
+                    </div>
+                </div>
+            </div>
+        </div>
 </template>

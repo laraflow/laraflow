@@ -27,8 +27,8 @@ const options = ref({
     orderBy: {column: 'id', ascending: false},
     resizableColumns: false,
     hiddenColumns: [],
-    params : {
-      paginate : true
+    params: {
+        paginate: true
     },
     requestAdapter: function (data) {
         data.dir = data.dir === 0 ? 'asc' : 'desc';
@@ -42,7 +42,7 @@ const options = ref({
         page: 'page',
         byColumn: 'byColumn'
     },
-    responseAdapter : function (response) {
+    responseAdapter: function (response) {
         response = response.data
         return {
             data: response.data,
@@ -53,164 +53,132 @@ const options = ref({
 
 const {exportTable, tableOptions} = useTable();
 
-onMounted(() => {
-    setTimeout(() => {
-        initTooltip();
-    }, 500);
-})
-const initTooltip = () => {
-    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-    tooltipTriggerList.map((tooltipTriggerEl) => {
-        return new window.bootstrap.Tooltip(tooltipTriggerEl);
-    });
-}
-
-const excelColumns = () => {
-    return {
-        Id: "id",
-        Profile: "profile",
-        Name: "name",
-        Email: "email",
-        Phone: "phone",
-        Status: "status"
-    };
-}
-
 </script>
 
 <template>
-    <div class="row mt-4 mx-2">
-        <div class="col-xl-12 col-lg-12 col-sm-12 layout-spacing">
-            <div class="panel p-0" style="min-height: 70vh !important;">
-                <div class="custom-table">
-                    <v-server-table :url="route('users.search')" :columns="columns" :options="options">
-                        <template #beforeFilter>
-                            <div class="d-flex flex-wrap justify-content-center justify-content-sm-start gap-2 pb-0">
-                                <AddLinkButton :url="route('users.create')">
-                                    {{ $t("add_user_btn") }}
-                                </AddLinkButton>
-                                <div class="custom-dropdown dropdown btn-group">
-                                    <a class="btn dropdown-toggle btn-icon-only" href="#" role="button" id="pendingTask"
-                                       data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <button aria-haspopup="true" aria-expanded="false" type="button"
-                                                class="btn dropdown-toggle btn-outline-success">
-                                            Exports
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                class="feather feather-chevron-down"
-                                            >
-                                                <polyline points="6 9 12 15 18 9"></polyline>
-                                            </svg>
-                                        </button>
-                                    </a>
-                                    <ul class="dropdown-menu dropdown-menu-end" @click="$event.stopPropagation()">
-                                        <li><a class="dropdown-item" href="javascript:void(0);"
-                                               @click="exportTable('csv')">CSV</a></li>
-                                        <li><a class="dropdown-item" href="javascript:void(0);"
-                                               @click="exportTable('print')">Print</a></li>
-                                        <li><a class="dropdown-item" href="javascript:void(0);"
-                                               @click="exportTable('pdf')">PDF</a></li>
-                                    </ul>
-                                </div>
-<!--                                <div class="custom-dropdown dropdown btn-group">-->
-<!--                                    <a class="btn dropdown-toggle btn-icon-only" href="#" role="button" id="pendingTask"-->
-<!--                                       data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-<!--                                        <button aria-haspopup="true" aria-expanded="false" type="button"-->
-<!--                                                class="btn dropdown-toggle btn-outline-primary">-->
-<!--                                            Columns-->
-<!--                                            <svg-->
-<!--                                                xmlns="http://www.w3.org/2000/svg"-->
-<!--                                                width="24"-->
-<!--                                                height="24"-->
-<!--                                                viewBox="0 0 24 24"-->
-<!--                                                fill="none"-->
-<!--                                                stroke="currentColor"-->
-<!--                                                stroke-width="2"-->
-<!--                                                stroke-linecap="round"-->
-<!--                                                stroke-linejoin="round"-->
-<!--                                                class="feather feather-chevron-down"-->
-<!--                                            >-->
-<!--                                                <polyline points="6 9 12 15 18 9"></polyline>-->
-<!--                                            </svg>-->
-<!--                                        </button>-->
-<!--                                    </a>-->
-<!--                                    <div class="dropdown-menu dropdown-menu-end" @click="$event.stopPropagation()">-->
-<!--                                        <div class="checkbox-outline-primary mx-3 my-2 custom-control custom-checkbox"-->
-<!--                                             v-for="(column, index) in columns" :key="index">-->
-<!--                                            <input-->
-<!--                                                variant="primary"-->
-<!--                                                type="checkbox"-->
-<!--                                                class="custom-control-input"-->
-<!--                                                :checked="!tableOptions.hiddenColumns.includes(column)"-->
-<!--                                                :id="'chk' + index"-->
-<!--                                                @change="columnVisibility(column, $event.target.checked)"-->
-<!--                                            />-->
-<!--                                            <label class="custom-control-label" :for="'chk' + index">-->
-<!--                                                {{ capitalize(column) }}-->
-<!--                                            </label>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-                            </div>
-                        </template>
-                        <template #id="props">
-                            <div class="checkbox-outline-primary custom-control custom-checkbox">
-                                <input variant="primary" type="checkbox" class="custom-control-input"
-                                       :id="props.row.id"/>
-                                <label class="custom-control-label" :for="props.row.id"></label>
-                            </div>
-                        </template>
-                        <template #actions>
-                            <div class="me-2 custom-dropdown dropdown btn-group">
-                                <a class="btn dropdown-toggle btn-icon-only" href="#" role="button" id="pendingTask"
-                                   data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        style="width: 24px; height: 24px"
-                                        width="24"
-                                        height="24"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        class="feather feather-more-horizontal"
-                                    >
-                                        <circle cx="12" cy="12" r="1"></circle>
-                                        <circle cx="19" cy="12" r="1"></circle>
-                                        <circle cx="5" cy="12" r="1"></circle>
-                                    </svg>
-                                </a>
-
-                                <ul class="dropdown-menu dropdown-menu-end">
-                                    <li>
-                                        <a href="javascript:void(0);" class="dropdown-item"> View </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);" class="dropdown-item"> Edit </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);" class="dropdown-item"> View Response </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);" class="dropdown-item"> Delete </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </template>
-                    </v-server-table>
+    <div class="custom-table">
+        <v-server-table :url="route('users.search')" :columns="columns" :options="options">
+            <template #beforeFilter>
+                <div class="d-flex flex-wrap justify-content-center justify-content-sm-start gap-2 pb-0">
+                    <div class="custom-dropdown dropdown btn-group">
+                        <a class="btn dropdown-toggle btn-icon-only" href="#" role="button" id="pendingTask"
+                           data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button aria-haspopup="true" aria-expanded="false" type="button"
+                                    class="btn dropdown-toggle btn-outline-success">
+                                Exports
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="feather feather-chevron-down"
+                                >
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </button>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" @click="$event.stopPropagation()">
+                            <li><a class="dropdown-item" href="javascript:void(0);"
+                                   @click="exportTable('csv')">CSV</a></li>
+                            <li><a class="dropdown-item" href="javascript:void(0);"
+                                   @click="exportTable('print')">Print</a></li>
+                            <li><a class="dropdown-item" href="javascript:void(0);"
+                                   @click="exportTable('pdf')">PDF</a></li>
+                        </ul>
+                    </div>
+                    <!--                                <div class="custom-dropdown dropdown btn-group">-->
+                    <!--                                    <a class="btn dropdown-toggle btn-icon-only" href="#" role="button" id="pendingTask"-->
+                    <!--                                       data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+                    <!--                                        <button aria-haspopup="true" aria-expanded="false" type="button"-->
+                    <!--                                                class="btn dropdown-toggle btn-outline-primary">-->
+                    <!--                                            Columns-->
+                    <!--                                            <svg-->
+                    <!--                                                xmlns="http://www.w3.org/2000/svg"-->
+                    <!--                                                width="24"-->
+                    <!--                                                height="24"-->
+                    <!--                                                viewBox="0 0 24 24"-->
+                    <!--                                                fill="none"-->
+                    <!--                                                stroke="currentColor"-->
+                    <!--                                                stroke-width="2"-->
+                    <!--                                                stroke-linecap="round"-->
+                    <!--                                                stroke-linejoin="round"-->
+                    <!--                                                class="feather feather-chevron-down"-->
+                    <!--                                            >-->
+                    <!--                                                <polyline points="6 9 12 15 18 9"></polyline>-->
+                    <!--                                            </svg>-->
+                    <!--                                        </button>-->
+                    <!--                                    </a>-->
+                    <!--                                    <div class="dropdown-menu dropdown-menu-end" @click="$event.stopPropagation()">-->
+                    <!--                                        <div class="checkbox-outline-primary mx-3 my-2 custom-control custom-checkbox"-->
+                    <!--                                             v-for="(column, index) in columns" :key="index">-->
+                    <!--                                            <input-->
+                    <!--                                                variant="primary"-->
+                    <!--                                                type="checkbox"-->
+                    <!--                                                class="custom-control-input"-->
+                    <!--                                                :checked="!tableOptions.hiddenColumns.includes(column)"-->
+                    <!--                                                :id="'chk' + index"-->
+                    <!--                                                @change="columnVisibility(column, $event.target.checked)"-->
+                    <!--                                            />-->
+                    <!--                                            <label class="custom-control-label" :for="'chk' + index">-->
+                    <!--                                                {{ capitalize(column) }}-->
+                    <!--                                            </label>-->
+                    <!--                                        </div>-->
+                    <!--                                    </div>-->
+                    <!--                                </div>-->
                 </div>
-            </div>
-        </div>
+            </template>
+            <template #id="props">
+                <div class="checkbox-outline-primary custom-control custom-checkbox">
+                    <input variant="primary" type="checkbox" class="custom-control-input"
+                           :id="props.row.id"/>
+                    <label class="custom-control-label" :for="props.row.id"></label>
+                </div>
+            </template>
+            <template #actions>
+                <div class="me-2 custom-dropdown dropdown btn-group">
+                    <a class="btn dropdown-toggle btn-icon-only" href="#" role="button" id="pendingTask"
+                       data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            style="width: 24px; height: 24px"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="feather feather-more-horizontal"
+                        >
+                            <circle cx="12" cy="12" r="1"></circle>
+                            <circle cx="19" cy="12" r="1"></circle>
+                            <circle cx="5" cy="12" r="1"></circle>
+                        </svg>
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                            <a href="javascript:void(0);" class="dropdown-item"> View </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="dropdown-item"> Edit </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="dropdown-item"> View Response </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="dropdown-item"> Delete </a>
+                        </li>
+                    </ul>
+                </div>
+            </template>
+        </v-server-table>
     </div>
 </template>
 

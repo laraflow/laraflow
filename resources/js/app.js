@@ -6,11 +6,9 @@ import {ZiggyVue} from '../../vendor/tightenco/ziggy';
 import store from "./store";
 import i18n from "./i18n";
 import * as bootstrap from "bootstrap";
-import "./assets/sass/components/custom-modal.scss";
-import "vue3-perfect-scrollbar/dist/vue3-perfect-scrollbar.css";
 import Swal from "sweetalert2";
-import VueNouislider from "vue3-nouislider";
-import "vue3-nouislider/dist/vue3-nouislider.css";
+// import VueNouislider from "vue3-nouislider";
+// import "vue3-nouislider/dist/vue3-nouislider.css";
 import {registerScrollSpy} from "vue3-scroll-spy/dist/index";
 import {ServerTable} from "v-tables-3";
 //vue-wizard
@@ -38,7 +36,7 @@ createInertiaApp({
             .use(ZiggyVue)
             .use(store)
             .use(i18n)
-            .use(VueNouislider)
+            // .use(VueNouislider)
             .use(ServerTable);
 
         registerScrollSpy(vueApp, {offset: 118});

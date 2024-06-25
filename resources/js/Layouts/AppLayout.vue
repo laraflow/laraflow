@@ -27,5 +27,3 @@ const store = useStore();
     </div>
 </template>
 
-<style lang="scss">
-</style>

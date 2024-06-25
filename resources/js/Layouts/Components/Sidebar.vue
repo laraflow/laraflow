@@ -1,15 +1,46 @@
 <script setup>
 import {onMounted, ref} from 'vue';
 import {useStore} from 'vuex';
-import {Link} from "@inertiajs/vue3";
+import {Link, usePage} from "@inertiajs/vue3";
 import {PerfectScrollbar} from "vue3-perfect-scrollbar";
 
 const store = useStore();
+const page = usePage();
 
-const menu_collapse = ref('dashboard');
+const expended = ref('dashboard');
+
+const toggleMobileMenu = () => {
+    if (window.innerWidth < 991) {
+        store.commit('toggleSideBar', !store.state.is_show_sidebar);
+    }
+}
+
+const toggleMenuExpended = () => {
+    const pageComponent = page.component;
+
+    let menus = {};
+    menus = {
+        'authentication': {
+            'expended': false,
+            'items': ['User/*', 'Team/*', 'Role/*', 'Permission/*']
+        }
+    };
+
+    for (const menus in menus) {
+        const group = menus[menus];
+        for (const item of group.items) {
+            if (pageComponent.startsWith(item)) {
+                expended.value = menus
+                return;
+            }
+        }
+    }
+}
 
 onMounted(() => {
+
     const selector = document.querySelector('#sidebar a[href="' + window.location.pathname + '"]');
+
     if (selector) {
         const ul = selector.closest('ul.collapse');
         if (ul) {
@@ -24,14 +55,11 @@ onMounted(() => {
             selector.click();
         }
     }
-});
 
-const toggleMobileMenu = () => {
-    if (window.innerWidth < 991) {
-        store.commit('toggleSideBar', !store.state.is_show_sidebar);
-    }
-};
+    // toggleMenuExpended();
+});
 </script>
+
 <template>
     <div class="sidebar-wrapper sidebar-theme">
         <nav ref="menu" id="sidebar">
@@ -41,7 +69,6 @@ const toggleMobileMenu = () => {
 
                 <li class="menu" @click="toggleMobileMenu">
                     <Link :href="route('dashboard')"
-                          aria-expanded="false"
                           :class="{ 'dropdown-toggle' : true, 'router-link-active active': route().current('dashboard')}">
                         <div class="">
                             <svg
@@ -65,7 +92,7 @@ const toggleMobileMenu = () => {
                 </li>
                 <li class="menu">
                     <a class="dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#authentication"
-                       aria-controls="authentication" aria-expanded="false">
+                       aria-controls="authentication" :aria-expanded="false">
                         <div class="">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"

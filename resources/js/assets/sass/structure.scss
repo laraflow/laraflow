@@ -31,9 +31,7 @@
     position: relative;
     width: 50%;
     flex-grow: 8;
-    margin-top: 108px;
-    margin-bottom: 0;
-    margin-left: 212px;
+    margin: 124px 16px 0 228px;
     transition: 0.6s;
 }
 
@@ -115,7 +113,7 @@
 @import '_structure/_navbar';
 @import '_structure/_sidebar';
 
-/*  
+/*
     ======================
         Footer-wrapper
     ======================
@@ -165,7 +163,7 @@
     background: #fff;
 
     .panel-heading {
-        padding: 20px;
+        padding: 16px;
 
         h4 {
             font-size: 17px;
