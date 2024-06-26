@@ -75,7 +75,7 @@ defineOptions({
             class="form-control"
             :class="{'form-control' : true, 'is-invalid' : hasError}"
             :name="name"
-            v-model="model"
+            v-model.trim="model"
             ref="input"
             v-bind="{...$attrs, class:null}"/>
         <FormError :message="message"/>

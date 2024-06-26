@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers;
 
-use App\Http\Requests\Auth\IndexUserRequest;
-use App\Http\Requests\Auth\StoreUserRequest;
-use App\Http\Requests\Auth\UpdateUserRequest;
+use App\Http\Requests\IndexUserRequest;
+use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\UpdateUserRequest;
 use App\Http\Resources\Auth\UserCollection;
 use App\Http\Resources\Auth\UserResource;
 use App\Models\User;
@@ -45,7 +45,7 @@ class UserController extends Controller
      * Return a *User* resource as collection or paginate.
      * ```paginate=false``` returns all resource as collection
      *
-     * @param IndexUserRequest $request
+     * @param \App\Http\Requests\IndexUserRequest $request
      * @return UserCollection|JsonResponse
      */
     public function search(IndexUserRequest $request): UserCollection|JsonResponse
@@ -138,7 +138,7 @@ class UserController extends Controller
     /**
      * Update a specified *User* resource using id.
      *
-     * @param UpdateUserRequest $request
+     * @param \App\Http\Requests\UpdateUserRequest $request
      * @param User $user
      * @return JsonResponse
      * @throws UpdateOperationException

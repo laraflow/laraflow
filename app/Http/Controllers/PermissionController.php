@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers;
 
-use App\Http\Requests\Auth\IndexPermissionRequest;
-use App\Http\Requests\Auth\StorePermissionRequest;
-use App\Http\Requests\Auth\UpdatePermissionRequest;
+use App\Http\Requests\IndexPermissionRequest;
+use App\Http\Requests\StorePermissionRequest;
+use App\Http\Requests\UpdatePermissionRequest;
 use App\Http\Resources\Auth\PermissionCollection;
 use App\Http\Resources\Auth\PermissionResource;
 use App\Models\Permission;
@@ -31,7 +31,7 @@ class PermissionController extends Controller
     /**
      * Return a list view of the *Permission* resource.
      *
-     * @param \App\Http\Requests\Auth\IndexPermissionRequest $request
+     * @param \App\Http\Requests\IndexPermissionRequest $request
      * @return Response
      */
     public function index(IndexPermissionRequest $request): Response
@@ -45,7 +45,7 @@ class PermissionController extends Controller
      * Return a *Permission* resource as collection or paginate.
      * ```paginate=false``` returns all resource as collection
      *
-     * @param \App\Http\Requests\Auth\IndexPermissionRequest $request
+     * @param \App\Http\Requests\IndexPermissionRequest $request
      * @return PermissionCollection|JsonResponse
      */
     public function search(IndexPermissionRequest $request): PermissionCollection|JsonResponse
@@ -83,7 +83,7 @@ class PermissionController extends Controller
     /**
      * Create a new *Permission* resource in storage.
      *
-     * @param \App\Http\Requests\Auth\StorePermissionRequest $request
+     * @param \App\Http\Requests\StorePermissionRequest $request
      * @return JsonResponse
      * @throws StoreOperationException
      */

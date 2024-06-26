@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers;
 
-use App\Http\Requests\Auth\IndexRoleRequest;
-use App\Http\Requests\Auth\StoreRoleRequest;
-use App\Http\Requests\Auth\UpdateRoleRequest;
+use App\Http\Requests\IndexRoleRequest;
+use App\Http\Requests\StoreRoleRequest;
+use App\Http\Requests\UpdateRoleRequest;
 use App\Http\Resources\Auth\RoleCollection;
 use App\Http\Resources\Auth\RoleResource;
 use App\Models\Role;
@@ -83,7 +83,7 @@ class RoleController extends Controller
     /**
      * Create a new *Role* resource in storage.
      *
-     * @param \App\Http\Requests\Auth\StoreRoleRequest $request
+     * @param \App\Http\Requests\StoreRoleRequest $request
      * @return JsonResponse
      * @throws StoreOperationException
      */
@@ -138,7 +138,7 @@ class RoleController extends Controller
     /**
      * Update a specified *Role* resource using id.
      *
-     * @param \App\Http\Requests\Auth\UpdateRoleRequest $request
+     * @param \App\Http\Requests\UpdateRoleRequest $request
      * @param Role $role
      * @return JsonResponse
      * @throws UpdateOperationException

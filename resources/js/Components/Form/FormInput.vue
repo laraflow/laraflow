@@ -15,17 +15,18 @@ const props = defineProps({
     },
     id: {
         type: String,
-        default: uuid(),
-    },
-    name: {
-        type: String,
-        default: 'name',
+        default: `input-${uuid()}`,
     },
     message: {
         type: String,
     },
-    classes: {
+    required: {
+        type: Boolean,
+        default: false,
+    },
+    hint: {
         type: String,
+        default: ''
     }
 })
 
@@ -55,16 +56,17 @@ defineOptions({
 
 <template>
     <div class="form-group">
-        <FormLabel :id="id" :label="label">
+        <FormLabel :id="id" :label="label" :required="required"/>
         <input
             :id="id"
             :type="type"
             ref="input"
             v-model="model"
-            :class="classes"
+            :class="{'form-control' : true, 'is-invalid' : hasError}"
             v-bind="{...$attrs, class:null}"
         />
         <FormError :message="message"/>
+        <small v-show="hint.length>0" class="text-muted">{{ hint }}</small>
     </div>
 </template>
 

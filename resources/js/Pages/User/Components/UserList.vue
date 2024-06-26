@@ -1,7 +1,6 @@
 <script setup>
-import {onMounted, ref} from "vue";
+import {ref} from "vue";
 import {useTable} from "@/Composables/table.js"
-import AddLinkButton from "@/Components/AddLinkButton.vue";
 
 const columns = ref(['id', 'name', 'email', 'created_at', 'updated_at', 'actions'])
 

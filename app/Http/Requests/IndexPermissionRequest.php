@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Auth;
+namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class IndexUserRequest extends FormRequest
+class IndexPermissionRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -29,8 +29,7 @@ class IndexUserRequest extends FormRequest
  "dir" => ["string","nullable","min:3","max:4"],
  "id" => ["integer","nullable","min:1"],
  "name" => ["string","nullable","max:255"],
- "email" => ["string","nullable","max:255"],
- "password" => ["string","nullable","max:255"]
+ "guard_name" => ["string","nullable","max:255"]
 ];
     }
 

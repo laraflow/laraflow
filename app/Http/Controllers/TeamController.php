@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers;
 
-use App\Http\Requests\Auth\IndexTeamRequest;
-use App\Http\Requests\Auth\StoreTeamRequest;
-use App\Http\Requests\Auth\UpdateTeamRequest;
+use App\Http\Requests\IndexTeamRequest;
+use App\Http\Requests\StoreTeamRequest;
+use App\Http\Requests\UpdateTeamRequest;
 use App\Http\Resources\Auth\TeamCollection;
 use App\Http\Resources\Auth\TeamResource;
 use App\Models\Team;
@@ -83,7 +83,7 @@ class TeamController extends Controller
     /**
      * Create a new *Team* resource in storage.
      *
-     * @param \App\Http\Requests\Auth\StoreTeamRequest $request
+     * @param \App\Http\Requests\StoreTeamRequest $request
      * @return JsonResponse
      * @throws StoreOperationException
      */
